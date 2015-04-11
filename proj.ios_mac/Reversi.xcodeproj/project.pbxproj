@@ -11,6 +11,15 @@
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		25664CF61AD9151C000B9711 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664CF41AD91212000B9711 /* GoogleMobileAds.framework */; };
+		25664CF81AD9153A000B9711 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664CF71AD9153A000B9711 /* AdSupport.framework */; };
+		25664CFE1AD91569000B9711 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664CFD1AD91569000B9711 /* CoreTelephony.framework */; };
+		25664D001AD91570000B9711 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664CFF1AD91570000B9711 /* EventKit.framework */; };
+		25664D021AD91578000B9711 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664D011AD91578000B9711 /* EventKitUI.framework */; };
+		25664D041AD91581000B9711 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664D031AD91581000B9711 /* MessageUI.framework */; };
+		25664D061AD91587000B9711 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664D051AD91587000B9711 /* StoreKit.framework */; };
+		25664D081AD91598000B9711 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664D071AD91598000B9711 /* SystemConfiguration.framework */; };
+		25664D0A1AD916F4000B9711 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664D091AD916F4000B9711 /* CoreMedia.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
@@ -106,6 +115,19 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* Reversi iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reversi iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		25664CEF1AD910FF000B9711 /* libPods-Reversi iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Reversi iOS.a"; path = "/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/../build/Debug-iphoneos/libPods-Reversi iOS.a"; sourceTree = "<absolute>"; };
+		25664CF21AD9120A000B9711 /* libPods-Reversi iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Reversi iOS.a"; path = "/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/../build/Debug-iphoneos/libPods-Reversi iOS.a"; sourceTree = "<absolute>"; };
+		25664CF41AD91212000B9711 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = "../Pods/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-7.1.0/GoogleMobileAds.framework"; sourceTree = "<group>"; };
+		25664CF71AD9153A000B9711 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		25664CF91AD91540000B9711 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		25664CFB1AD91547000B9711 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		25664CFD1AD91569000B9711 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
+		25664CFF1AD91570000B9711 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/EventKit.framework; sourceTree = DEVELOPER_DIR; };
+		25664D011AD91578000B9711 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/EventKitUI.framework; sourceTree = DEVELOPER_DIR; };
+		25664D031AD91581000B9711 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
+		25664D051AD91587000B9711 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
+		25664D071AD91598000B9711 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		25664D091AD916F4000B9711 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
@@ -166,6 +188,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25664D0A1AD916F4000B9711 /* CoreMedia.framework in Frameworks */,
+				25664D081AD91598000B9711 /* SystemConfiguration.framework in Frameworks */,
+				25664D061AD91587000B9711 /* StoreKit.framework in Frameworks */,
+				25664D041AD91581000B9711 /* MessageUI.framework in Frameworks */,
+				25664D021AD91578000B9711 /* EventKitUI.framework in Frameworks */,
+				25664D001AD91570000B9711 /* EventKit.framework in Frameworks */,
+				25664CFE1AD91569000B9711 /* CoreTelephony.framework in Frameworks */,
+				25664CF81AD9153A000B9711 /* AdSupport.framework in Frameworks */,
+				25664CF61AD9151C000B9711 /* GoogleMobileAds.framework in Frameworks */,
 				52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */,
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
@@ -252,6 +283,19 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25664D091AD916F4000B9711 /* CoreMedia.framework */,
+				25664D071AD91598000B9711 /* SystemConfiguration.framework */,
+				25664D051AD91587000B9711 /* StoreKit.framework */,
+				25664D031AD91581000B9711 /* MessageUI.framework */,
+				25664D011AD91578000B9711 /* EventKitUI.framework */,
+				25664CFF1AD91570000B9711 /* EventKit.framework */,
+				25664CFD1AD91569000B9711 /* CoreTelephony.framework */,
+				25664CFB1AD91547000B9711 /* AVFoundation.framework */,
+				25664CF91AD91540000B9711 /* AudioToolbox.framework */,
+				25664CF71AD9153A000B9711 /* AdSupport.framework */,
+				25664CF41AD91212000B9711 /* GoogleMobileAds.framework */,
+				25664CF21AD9120A000B9711 /* libPods-Reversi iOS.a */,
+				25664CEF1AD910FF000B9711 /* libPods-Reversi iOS.a */,
 				8262943D1AAF051F00CB7CF7 /* Security.framework */,
 				52B47A461A53D09B004E4C60 /* Security.framework */,
 				D6B0611A1803AB670077942B /* CoreMotion.framework */,
@@ -531,6 +575,10 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-7.1.0",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -549,7 +597,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/../build/Debug-iphoneos";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -567,6 +615,10 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/Google-Mobile-Ads-SDK/GoogleMobileAdsSdkiOS-7.1.0",
+				);
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
@@ -583,7 +635,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/../build/Debug-iphoneos";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -683,8 +735,13 @@
 					"$(SRCROOT)/../cocos2d/external",
 					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
 				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(BUILT_PRODUCTS_DIR)/libPods-Reversi\\ iOS.a",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -712,8 +769,13 @@
 					"$(SRCROOT)/../cocos2d/external",
 					"$(SRCROOT)/../cocos2d/external/chipmunk/include/chipmunk",
 				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(BUILT_PRODUCTS_DIR)/libPods-Reversi\\ iOS.a",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				VALIDATE_PRODUCT = YES;

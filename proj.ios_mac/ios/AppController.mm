@@ -73,7 +73,7 @@ static AppDelegate s_sharedApplication;
     else
     {
         // use this method on ios6
-        [window setRootViewController:_viewController];
+        [window setRootViewController: _viewController];
     }
 
     [window makeKeyAndVisible];
@@ -83,7 +83,18 @@ static AppDelegate s_sharedApplication;
     // IMPORTANT: Setting the GLView should be done after creating the RootViewController
     cocos2d::GLView *glview = cocos2d::GLViewImpl::createWithEAGLView(eaglView);
     cocos2d::Director::getInstance()->setOpenGLView(glview);
-
+    
+    bannerView_ = [GADBannerView alloc];
+    CGPoint origin = CGPointMake( 0.0, _viewController.view.frame.size.height - GAD_SIZE_320x50.height);
+    bannerView_ = [[[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner origin:origin] autorelease];
+    
+    bannerView_.adUnitID = @"ca-app-pub-9321975971123036/6986233934";
+    [_viewController.view addSubview: bannerView_];
+    //[bannerView_ setRootViewController:viewController];
+    bannerView_.rootViewController = _viewController;
+    
+    [bannerView_ loadRequest:[GADRequest request]];
+    
     app->run();
 
     return YES;
