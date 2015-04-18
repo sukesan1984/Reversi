@@ -30,13 +30,22 @@ bool GameMain::init()
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
-    //texture load
+    // texture load
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("textures.plist");
+    
+    /////////////////////////////
+    // add background sprite
+    Sprite *backgroundSprite = Sprite::createWithSpriteFrameName("background.png");
+
+    // position the backgroundSprite on the center of the screen
+    backgroundSprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+
+    // add the backgroundSprite as a child to this layer
+    this->addChild(backgroundSprite, 0);
 
     /////////////////////////////
-    // 2. add a menu item with "X" image, which is clicked to quit the program
-    //    you may modify it.
-    
+    // create buttons
+    /////////////////////////////
     Sprite *homeButton         = Sprite::createWithSpriteFrameName("home_button.png");
     Sprite *homeButtonSelected = Sprite::createWithSpriteFrameName("home_button.png");
     homeButtonSelected->setColor(Color3B::GRAY);
@@ -54,25 +63,11 @@ bool GameMain::init()
     settingItem->setPosition(Vec2(origin.x + settingItem->getContentSize().width / 2 + 20,
                                origin.y + visibleSize.height - settingItem->getContentSize().height / 2 - 20));
     
-
     auto menu = Menu::create(homeItem, settingItem, NULL);
     
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    /////////////////////////////
-    // 3. add your codes below...
-
-    
-    // add background sprite
-    Sprite *backgroundSprite = Sprite::createWithSpriteFrameName("background.png");
-
-    // position the backgroundSprite on the center of the screen
-    backgroundSprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
-    // add the backgroundSprite as a child to this layer
-    this->addChild(backgroundSprite, 0);
-    
     return true;
 }
 
