@@ -12,6 +12,10 @@
 #include <stdio.h>
 #include "cocos2d.h"
 
+struct Point {
+    int x;
+    int y;
+};
 class BoardController
 {
 private:
@@ -19,10 +23,12 @@ private:
     cocos2d::Sprite* boardSprite;
     cocos2d::EventDispatcher* eventDispatcher;
     
-    void Initialize();
+    void initialize();
     
-    bool OnTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
-    void OnTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event);
+    bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
+    void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event);
+    
+    Point getIndex(cocos2d::Vec2 locationInNode);
 public:
     BoardController();
     BoardController(cocos2d::Sprite* boardSprite, cocos2d::EventDispatcher* eventDispather);
