@@ -23,9 +23,11 @@ public:
     PieceController(cocos2d::Sprite *blackSprite, cocos2d::Sprite *whiteSprite, PieceColor defaultColor, cocos2d::Vec2 defaultPosition);
     ~PieceController();
     void changeColor();
+    void show();
 private:
     cocos2d::Sprite *blackSprite;
     cocos2d::Sprite *whiteSprite;
+    cocos2d::Sprite *currentSprite;
     PieceColor currentColor;
     const float animationTime = 0.4f;
     bool isPlaying = false;

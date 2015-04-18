@@ -126,4 +126,5 @@ void GameMain::onClickHomeButton(cocos2d::Ref *pSender)
 void GameMain::onClickSettingButton(cocos2d::Ref *pSender)
 {
     log("setting button 押された");
+    this->pieceController->show();
 }
