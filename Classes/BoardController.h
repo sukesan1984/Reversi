@@ -21,6 +21,8 @@ private:
     
     void Initialize();
     
+    bool OnTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
+    void OnTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event);
 public:
     BoardController();
     BoardController(cocos2d::Sprite* boardSprite, cocos2d::EventDispatcher* eventDispather);
