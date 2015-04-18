@@ -38,7 +38,7 @@ void BoardController::Initialize()
     // タッチイベントが終了した場合
     listener1->onTouchEnded = CC_CALLBACK_2(BoardController::OnTouchEnded, this);
 
-    this->eventDispatcher->addEventListenerWithSceneGraphPriority(listener1, boardSprite);   this->boardSprite = boardSprite;
+    this->eventDispatcher->addEventListenerWithSceneGraphPriority(listener1, this->boardSprite);
 }
 
 bool BoardController::OnTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
