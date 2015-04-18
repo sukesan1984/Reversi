@@ -9,11 +9,13 @@
 #include "PieceController.h"
 
 PieceController::PieceController(){}
-PieceController::PieceController(cocos2d::Sprite *blackSprite, cocos2d::Sprite *whiteSprite, PieceColor defaultColor)
+PieceController::PieceController(cocos2d::Sprite *blackSprite, cocos2d::Sprite *whiteSprite, PieceColor defaultColor, cocos2d::Vec2 defaultPosition)
 {
-    this->blackSprite = blackSprite;
-    this->whiteSprite = whiteSprite;
-    this->currentColor = defaultColor;
+    this->blackSprite     = blackSprite;
+    this->whiteSprite     = whiteSprite;
+    this->currentColor    = defaultColor;
+    this->currentPosition = defaultPosition;
+    this->setPosition(defaultPosition);
     switch(this->currentColor)
     {
         case PieceColor::White:
@@ -29,7 +31,7 @@ PieceController::PieceController(cocos2d::Sprite *blackSprite, cocos2d::Sprite *
 
 PieceController::~PieceController(){}
 
-void PieceController::ChangeColor()
+void PieceController::changeColor()
 {
     if(this->isPlaying) return;
     
@@ -65,4 +67,10 @@ void PieceController::ChangeColor()
     
     cocos2d::Action *afterAction  = nextSprite->runAction(waitToZero);
     this->isPlaying = !afterAction->isDone();
+}
+
+void PieceController::setPosition(cocos2d::Vec2 position)
+{
+    this->blackSprite->setPosition(position);
+    this->whiteSprite->setPosition(position);
 }

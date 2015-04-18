@@ -79,12 +79,12 @@ bool GameMain::init()
     
     // piece sprite
     Sprite *blackSprite = Sprite::createWithSpriteFrameName("black.png");
-    blackSprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2));
-    
     Sprite *whiteSprite = Sprite::createWithSpriteFrameName("white.png");
-    whiteSprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2));
-    
-    this->pieceController = new PieceController::PieceController(blackSprite, whiteSprite, PieceController::PieceColor::White);
+    this->pieceController = new PieceController::PieceController(
+                                     blackSprite,
+                                     whiteSprite,
+                                     PieceController::PieceColor::White,
+                                     Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2));
     
     this->addChild(blackSprite, 3);
     this->addChild(whiteSprite, 3);
@@ -120,7 +120,7 @@ void GameMain::menuCloseCallback(Ref* pSender)
 void GameMain::onClickHomeButton(cocos2d::Ref *pSender)
 {
     log("home button 押された");
-    this->pieceController->ChangeColor();
+    this->pieceController->changeColor();
 }
 
 void GameMain::onClickSettingButton(cocos2d::Ref *pSender)
