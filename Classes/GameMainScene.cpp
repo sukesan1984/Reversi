@@ -42,10 +42,20 @@ bool GameMain::init()
     homeButtonSelected->setColor(Color3B::GRAY);
     
     auto homeItem = MenuItemSprite::create(homeButton, homeButtonSelected, CC_CALLBACK_1(GameMain::onClickHomeButton, this));
-    homeItem->setPosition(Vec2(origin.x + visibleSize.width - homeItem->getContentSize().width / 2,
-                               origin.y + visibleSize.height - homeItem->getContentSize().height / 2));
+    homeItem->setPosition(Vec2(origin.x + visibleSize.width - homeItem->getContentSize().width / 2 - 20,
+                               origin.y + visibleSize.height - homeItem->getContentSize().height / 2 - 20));
+    
+    Sprite *settingButton         = Sprite::createWithSpriteFrameName("setting_button.png");
+    Sprite *settingButtonSelected = Sprite::createWithSpriteFrameName("setting_button.png");
+    settingButtonSelected->setColor(Color3B::GRAY);
+    
+    auto settingItem = MenuItemSprite::create(settingButton, settingButtonSelected, CC_CALLBACK_1(GameMain::onClickSettingButton, this));
+    
+    settingItem->setPosition(Vec2(origin.x + settingItem->getContentSize().width / 2 + 20,
+                               origin.y + visibleSize.height - settingItem->getContentSize().height / 2 - 20));
+    
 
-    auto menu = Menu::create(homeItem, NULL);
+    auto menu = Menu::create(homeItem, settingItem, NULL);
     
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
@@ -83,5 +93,10 @@ void GameMain::menuCloseCallback(Ref* pSender)
 
 void GameMain::onClickHomeButton(cocos2d::Ref *pSender)
 {
-    log("homeButton 押された");
+    log("home button 押された");
+}
+
+void GameMain::onClickSettingButton(cocos2d::Ref *pSender)
+{
+    log("setting button 押された");
 }

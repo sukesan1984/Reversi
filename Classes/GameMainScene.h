@@ -16,6 +16,7 @@ public:
     void menuCloseCallback(cocos2d::Ref* pSender);
     
     void onClickHomeButton(cocos2d::Ref* pSender);
+    void onClickSettingButton(cocos2d::Ref* pSender);
     
     // implement the "static create()" method manually
     CREATE_FUNC(GameMain);
