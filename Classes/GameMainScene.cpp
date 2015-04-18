@@ -68,6 +68,12 @@ bool GameMain::init()
     
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
+    
+    // create board
+    Sprite *boardSprite = Sprite::createWithSpriteFrameName("board.png");
+    boardSprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    this->addChild(boardSprite, 2);
+    
 
     return true;
 }
