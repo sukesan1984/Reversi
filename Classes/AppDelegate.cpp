@@ -38,6 +38,14 @@ bool AppDelegate::applicationDidFinishLaunching() {
         director->setOpenGLView(glview);
     }
 
+    glview->setDesignResolutionSize(320, 480, ResolutionPolicy::SHOW_ALL);
+    
+    //デバイスの縦幅が640px以上の場合はcontentScaleFactorを2倍にする。
+    Size frameSize = glview->getFrameSize();
+    if (frameSize.height >= 640.0f ) {
+        //スケールファクターを設定
+        director->setContentScaleFactor(2.0f);
+    }
     // turn on display FPS
     director->setDisplayStats(true);
 

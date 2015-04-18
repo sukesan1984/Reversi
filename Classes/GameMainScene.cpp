@@ -27,7 +27,8 @@ bool GameMain::init()
         return false;
     }
     
-    Size visibleSize = Director::getInstance()->getVisibleSize();
+    //Size visibleSize = Director::getInstance()->getVisibleSize();
+    Size visibleSize = Director::getInstance()->getOpenGLView()->getDesignResolutionSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     
     // texture load
