@@ -70,10 +70,20 @@ bool GameMain::init()
     this->addChild(menu, 1);
     
     // create board
+    const int offsetY = 40;
     Sprite *boardSprite = Sprite::createWithSpriteFrameName("board.png");
-    boardSprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    boardSprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - offsetY));
     this->addChild(boardSprite, 2);
     
+    // create score background
+    const int scoreBoardMarginX = 10;
+    Sprite *scoreBoardBlack = Sprite::createWithSpriteFrameName("score_background.png");
+    scoreBoardBlack->setPosition(Vec2(visibleSize.width/2 + origin.x - scoreBoardBlack->getContentSize().width / 2 - scoreBoardMarginX / 2, visibleSize.height/2 + origin.y - offsetY + boardSprite->getContentSize().height / 2 + 10 + scoreBoardBlack->getContentSize().height / 2));
+    this->addChild(scoreBoardBlack, 3);
+    
+    Sprite *scoreBoardWhite = Sprite::createWithSpriteFrameName("score_background.png");
+    scoreBoardWhite->setPosition(Vec2(visibleSize.width/2 + origin.x + scoreBoardWhite->getContentSize().width / 2 + scoreBoardMarginX / 2, visibleSize.height/2 + origin.y - offsetY + boardSprite->getContentSize().height / 2 + 10 + scoreBoardWhite->getContentSize().height / 2));
+    this->addChild(scoreBoardWhite, 3);
 
     return true;
 }
