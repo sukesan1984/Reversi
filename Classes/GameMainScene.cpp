@@ -29,28 +29,30 @@ bool GameMain::init()
     
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    
+    //texture load
+    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("textures.plist");
 
     /////////////////////////////
     // 2. add a menu item with "X" image, which is clicked to quit the program
     //    you may modify it.
-
-    // add a "close" icon to exit the progress. it's an autorelease object
-    auto closeItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseSelected.png",
-                                           CC_CALLBACK_1(GameMain::menuCloseCallback, this));
     
-	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
-                                origin.y + closeItem->getContentSize().height/2));
+    Sprite *homeButton         = Sprite::createWithSpriteFrameName("home_button.png");
+    Sprite *homeButtonSelected = Sprite::createWithSpriteFrameName("home_button.png");
+    homeButtonSelected->setColor(Color3B::GRAY);
+    
+    auto homeItem = MenuItemSprite::create(homeButton, homeButtonSelected, CC_CALLBACK_1(GameMain::onClickHomeButton, this));
+    homeItem->setPosition(Vec2(origin.x + visibleSize.width - homeItem->getContentSize().width / 2,
+                               origin.y + visibleSize.height - homeItem->getContentSize().height / 2));
 
-    // create menu, it's an autorelease object
-    auto menu = Menu::create(closeItem, NULL);
+    auto menu = Menu::create(homeItem, NULL);
+    
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
     /////////////////////////////
     // 3. add your codes below...
-    SpriteFrameCache::getInstance()->addSpriteFramesWithFile("textures.plist");
+
     
     // add background sprite
     Sprite *backgroundSprite = Sprite::createWithSpriteFrameName("background.png");
@@ -77,4 +79,9 @@ void GameMain::menuCloseCallback(Ref* pSender)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
+}
+
+void GameMain::onClickHomeButton(cocos2d::Ref *pSender)
+{
+    log("homeButton 押された");
 }
