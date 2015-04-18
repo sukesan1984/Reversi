@@ -23,6 +23,7 @@
 		25664D0A1AD916F4000B9711 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664D091AD916F4000B9711 /* CoreMedia.framework */; };
 		25CD2EE41AE270F800869579 /* textures.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25CD2EE21AE270F800869579 /* textures.plist */; };
 		25CD2EE51AE270F800869579 /* textures.png in Resources */ = {isa = PBXBuildFile; fileRef = 25CD2EE31AE270F800869579 /* textures.png */; };
+		25CD2EE81AE2971C00869579 /* BoardController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25CD2EE61AE2971C00869579 /* BoardController.cpp */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
@@ -128,6 +129,8 @@
 		25664D091AD916F4000B9711 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
 		25CD2EE21AE270F800869579 /* textures.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = textures.plist; sourceTree = "<group>"; };
 		25CD2EE31AE270F800869579 /* textures.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textures.png; sourceTree = "<group>"; };
+		25CD2EE61AE2971C00869579 /* BoardController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoardController.cpp; sourceTree = "<group>"; };
+		25CD2EE71AE2971C00869579 /* BoardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardController.h; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
@@ -334,6 +337,8 @@
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* GameMainScene.cpp */,
 				46880B8719C43A87006E1F66 /* GameMainScene.h */,
+				25CD2EE61AE2971C00869579 /* BoardController.cpp */,
+				25CD2EE71AE2971C00869579 /* BoardController.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -533,6 +538,7 @@
 				46880B8A19C43A87006E1F66 /* GameMainScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				25CD2EE81AE2971C00869579 /* BoardController.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

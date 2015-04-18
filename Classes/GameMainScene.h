@@ -2,9 +2,12 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "BoardController.h"
 
 class GameMain : public cocos2d::Layer
 {
+private:
+    BoardController* boardController;
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
