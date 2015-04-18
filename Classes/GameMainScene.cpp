@@ -1,14 +1,14 @@
-#include "HelloWorldScene.h"
+#include "GameMainScene.h"
 
 USING_NS_CC;
 
-Scene* HelloWorld::createScene()
+Scene* GameMain::createScene()
 {
     // 'scene' is an autorelease object
     auto scene = Scene::create();
     
     // 'layer' is an autorelease object
-    auto layer = HelloWorld::create();
+    auto layer = GameMain::create();
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -18,7 +18,7 @@ Scene* HelloWorld::createScene()
 }
 
 // on "init" you need to initialize your instance
-bool HelloWorld::init()
+bool GameMain::init()
 {
     //////////////////////////////
     // 1. super init first
@@ -38,7 +38,7 @@ bool HelloWorld::init()
     auto closeItem = MenuItemImage::create(
                                            "CloseNormal.png",
                                            "CloseSelected.png",
-                                           CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
+                                           CC_CALLBACK_1(GameMain::menuCloseCallback, this));
     
 	closeItem->setPosition(Vec2(origin.x + visibleSize.width - closeItem->getContentSize().width/2 ,
                                 origin.y + closeItem->getContentSize().height/2));
@@ -53,10 +53,9 @@ bool HelloWorld::init()
 
     // add a label shows "Hello World"
     // create and initialize a label
-    
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("textures.plist");
     
-    // add "HelloWorld" splash screen"
+    // add "GameMain" splash screen"
     Sprite *sprite = Sprite::createWithSpriteFrameName("background.png");
 
     // position the sprite on the center of the screen
@@ -69,7 +68,7 @@ bool HelloWorld::init()
 }
 
 
-void HelloWorld::menuCloseCallback(Ref* pSender)
+void GameMain::menuCloseCallback(Ref* pSender)
 {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 	MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
