@@ -77,6 +77,18 @@ bool GameMain::init()
     
     BoardController* boardController = new BoardController(boardSprite, _eventDispatcher);
     
+    // piece sprite
+    Sprite *blackSprite = Sprite::createWithSpriteFrameName("black.png");
+    blackSprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2));
+    
+    Sprite *whiteSprite = Sprite::createWithSpriteFrameName("white.png");
+    whiteSprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2));
+    
+    this->pieceController = new PieceController::PieceController(blackSprite, whiteSprite, PieceController::PieceColor::White);
+    
+    this->addChild(blackSprite, 3);
+    this->addChild(whiteSprite, 3);
+    
     // create score background
     const int scoreBoardMarginX = 10;
     Sprite *scoreBoardBlack = Sprite::createWithSpriteFrameName("score_background.png");
@@ -108,6 +120,7 @@ void GameMain::menuCloseCallback(Ref* pSender)
 void GameMain::onClickHomeButton(cocos2d::Ref *pSender)
 {
     log("home button 押された");
+    this->pieceController->ChangeColor();
 }
 
 void GameMain::onClickSettingButton(cocos2d::Ref *pSender)

@@ -24,6 +24,7 @@
 		25CD2EE41AE270F800869579 /* textures.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25CD2EE21AE270F800869579 /* textures.plist */; };
 		25CD2EE51AE270F800869579 /* textures.png in Resources */ = {isa = PBXBuildFile; fileRef = 25CD2EE31AE270F800869579 /* textures.png */; };
 		25CD2EE81AE2971C00869579 /* BoardController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25CD2EE61AE2971C00869579 /* BoardController.cpp */; };
+		25CD2EEB1AE2A72100869579 /* PieceController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25CD2EE91AE2A72100869579 /* PieceController.cpp */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
@@ -131,6 +132,8 @@
 		25CD2EE31AE270F800869579 /* textures.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textures.png; sourceTree = "<group>"; };
 		25CD2EE61AE2971C00869579 /* BoardController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoardController.cpp; sourceTree = "<group>"; };
 		25CD2EE71AE2971C00869579 /* BoardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardController.h; sourceTree = "<group>"; };
+		25CD2EE91AE2A72100869579 /* PieceController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PieceController.cpp; sourceTree = "<group>"; };
+		25CD2EEA1AE2A72100869579 /* PieceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieceController.h; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
@@ -339,6 +342,8 @@
 				46880B8719C43A87006E1F66 /* GameMainScene.h */,
 				25CD2EE61AE2971C00869579 /* BoardController.cpp */,
 				25CD2EE71AE2971C00869579 /* BoardController.h */,
+				25CD2EE91AE2A72100869579 /* PieceController.cpp */,
+				25CD2EEA1AE2A72100869579 /* PieceController.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -534,6 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25CD2EEB1AE2A72100869579 /* PieceController.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameMainScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
