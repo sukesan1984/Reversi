@@ -50,19 +50,16 @@ bool GameMain::init()
 
     /////////////////////////////
     // 3. add your codes below...
-
-    // add a label shows "Hello World"
-    // create and initialize a label
     SpriteFrameCache::getInstance()->addSpriteFramesWithFile("textures.plist");
     
-    // add "GameMain" splash screen"
-    Sprite *sprite = Sprite::createWithSpriteFrameName("background.png");
+    // add background sprite
+    Sprite *backgroundSprite = Sprite::createWithSpriteFrameName("background.png");
 
-    // position the sprite on the center of the screen
-    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+    // position the backgroundSprite on the center of the screen
+    backgroundSprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 
-    // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
+    // add the backgroundSprite as a child to this layer
+    this->addChild(backgroundSprite, 0);
     
     return true;
 }
