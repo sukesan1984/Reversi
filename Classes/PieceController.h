@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "cocos2d.h"
+#include "BoardModel.h"
 
 class PieceController
 {
@@ -26,6 +27,7 @@ public:
     void changeColor();
     void show();
     void show(PieceColor color);
+    void show(BoardModel::State state);
 private:
     cocos2d::Sprite *blackSprite;
     cocos2d::Sprite *whiteSprite;

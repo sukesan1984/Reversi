@@ -48,20 +48,7 @@ void BoardController::initialize()
         for(int j = 0; j < 8; j++)
         {
             BoardModel::State currentState =this->boardModel->getState(i, j);
-            if(currentState != BoardModel::State::None)
-            {
-                switch(currentState)
-                {
-                    case BoardModel::State::Black:
-                        this->pieceControllersHolder->get(i, j)->show(PieceController::PieceColor::Black);
-                        break;
-                    case BoardModel::State::White:
-                        this->pieceControllersHolder->get(i, j)->show(PieceController::PieceColor::White);
-                        break;
-                    default:
-                        break;
-                }
-            }
+            this->pieceControllersHolder->get(i, j)->show(currentState);
         }
     }
 }

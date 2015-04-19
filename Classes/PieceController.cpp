@@ -117,6 +117,24 @@ void PieceController::show(PieceColor color)
     }
 }
 
+void PieceController::show(BoardModel::State state)
+{
+    if(state != BoardModel::State::None)
+    {
+        switch(state)
+        {
+            case BoardModel::State::Black:
+                this->show(PieceController::PieceColor::Black);
+                break;
+            case BoardModel::State::White:
+                this->show(PieceController::PieceColor::White);
+                break;
+            default:
+                break;
+        }
+    }
+}
+
 void PieceController::setPosition(cocos2d::Vec2 position)
 {
     this->blackSprite->setPosition(position);
