@@ -2,6 +2,7 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "BoardBuilder.h"
 #include "BoardController.h"
 #include "PieceController.h"
 #include "PieceControllersHolder.h"
