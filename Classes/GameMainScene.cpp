@@ -77,17 +77,9 @@ bool GameMain::init()
     
     BoardController* boardController = new BoardController(boardSprite, _eventDispatcher);
     
-    // piece sprite
-    Sprite *blackSprite = Sprite::createWithSpriteFrameName("black.png");
-    Sprite *whiteSprite = Sprite::createWithSpriteFrameName("white.png");
-    this->pieceController = new PieceController::PieceController(
-                                     blackSprite,
-                                     whiteSprite,
-                                     PieceController::PieceColor::White,
-                                     Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2));
-    
-    this->addChild(blackSprite, 3);
-    this->addChild(whiteSprite, 3);
+    PieceController **pieceControllers = this->createPieceControllers();
+    PieceControllersHolder *pieceControllerHolder = new PieceControllersHolder(pieceControllers);
+    this->pieceController = pieceControllerHolder->get(4, 4);
     
     // create score background
     const int scoreBoardMarginX = 10;
@@ -100,6 +92,31 @@ bool GameMain::init()
     this->addChild(scoreBoardWhite, 3);
     
     return true;
+}
+
+PieceController** GameMain::createPieceControllers()
+{
+    const int Width  = 8;
+    const int Height = 8;
+    int Length = Width * Height;
+    PieceController **pieceControllers = new PieceController*[Length];
+    
+    for(int i = 0; i < Length; i++) {
+        int x = i % Width;
+        int y = i / Width;
+        Sprite *blackSprite = Sprite::createWithSpriteFrameName("black.png");
+        Sprite *whiteSprite = Sprite::createWithSpriteFrameName("white.png");
+        pieceControllers[i] = new PieceController(
+                                         blackSprite,
+                                         whiteSprite,
+                                         PieceController::PieceColor::White,
+                                         Vec2(blackSprite->getContentSize().width * x, blackSprite->getContentSize().height * y));
+        
+        this->addChild(blackSprite, 3);
+        this->addChild(whiteSprite, 3);
+    }
+    
+    return pieceControllers;
 }
 
 
