@@ -84,6 +84,7 @@ void PieceController::show()
     auto action1 = cocos2d::FadeIn::create(0.1f);
     cocos2d::CallFunc *callback1 = cocos2d::CallFunc::create([this](){
         this->isPlaying = false;
+        this->isShown = true;
     });
     cocos2d::Sequence *sequence1 = cocos2d::Sequence::create(action1, callback1, NULL);
     this->blackSprite->runAction(sequence0);

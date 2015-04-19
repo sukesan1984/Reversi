@@ -22,6 +22,7 @@ public:
     PieceController();
     PieceController(cocos2d::Sprite *blackSprite, cocos2d::Sprite *whiteSprite, PieceColor defaultColor, cocos2d::Vec2 defaultPosition);
     ~PieceController();
+    bool isShown = false;
     void changeColor();
     void show();
 private:

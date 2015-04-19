@@ -61,7 +61,16 @@ bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
         
         Point touchPoint = this->getIndex(locationInNode);
         cocos2d::log("[index] x: %d, y:%d", touchPoint.x, touchPoint.y);
-        this->pieceControllersHolder->get(touchPoint.x, touchPoint.y)->show();
+        PieceController *pieceController = this->pieceControllersHolder->get(touchPoint.x, touchPoint.y);
+        if(pieceController->isShown)
+        {
+            pieceController->changeColor();
+        }
+        else
+        {
+            pieceController->show();
+        }
+        
         return true;
     }
     return false;
