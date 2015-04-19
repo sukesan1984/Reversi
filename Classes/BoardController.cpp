@@ -13,9 +13,10 @@ BoardController::BoardController()
 {
 }
 
-BoardController::BoardController(cocos2d::Sprite* boardSprite, cocos2d::EventDispatcher* eventDispatcher)
+BoardController::BoardController(cocos2d::Sprite* boardSprite, PieceControllersHolder *pieceControllersHolder, cocos2d::EventDispatcher* eventDispatcher)
 {
     this->boardSprite     = boardSprite;
+    this->pieceControllersHolder = pieceControllersHolder;
     this->eventDispatcher = eventDispatcher;
     this->initialize();
 }
@@ -60,9 +61,7 @@ bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
         
         Point touchPoint = this->getIndex(locationInNode);
         cocos2d::log("[index] x: %d, y:%d", touchPoint.x, touchPoint.y);
-        
-        // 不透明度を変更する。
-        target->setOpacity(180);
+        this->pieceControllersHolder->get(touchPoint.x, touchPoint.y)->show();
         return true;
     }
     return false;
@@ -70,12 +69,6 @@ bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
 
 void BoardController::onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event)
 {
-    // ターゲットを取得する。
-    auto target = static_cast<cocos2d::Sprite*>(event->getCurrentTarget());
-    // ここに終了した場合の処理を書く。
-    cocos2d::log("sprite onTouchesEnded.. ");
-    // 不透明度を元に戻す。
-    target->setOpacity(255);
 }
 
 Point BoardController::getIndex(cocos2d::Vec2 locationInNode)

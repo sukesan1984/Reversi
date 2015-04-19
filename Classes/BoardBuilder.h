@@ -12,6 +12,8 @@
 #include <stdio.h>
 #include "cocos2d.h"
 #include "BoardController.h"
+#include "PieceController.h"
+#include "PieceControllersHolder.h"
 
 ///////////////////
 /// Boardにまつわるいろいろを生成・管理するクラス
@@ -22,6 +24,9 @@ private:
     BoardController *boardController;
     cocos2d::Layer *parentLayer;
     cocos2d::EventDispatcher* eventDispatcher;
+    PieceController** createPieceControllers();
+    PieceController** pieceControllers;
+    PieceControllersHolder* pieceControllersHolder;
 public:
     BoardBuilder();
     BoardBuilder(cocos2d::Layer* parentLayer, cocos2d::EventDispatcher* eventDispatcher);

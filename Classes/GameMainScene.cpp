@@ -71,12 +71,8 @@ bool GameMain::init()
     
     // create board
     const int offsetY = 40;
-    BoardBuilder *boardBuilder = new BoardBuilder(this, _eventDispatcher);
-    boardBuilder->create(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - offsetY));
-    
-    PieceController **pieceControllers = this->createPieceControllers();
-    PieceControllersHolder *pieceControllerHolder = new PieceControllersHolder(pieceControllers);
-    this->pieceController = pieceControllerHolder->get(4, 4);
+    this->boardBuilder = new BoardBuilder(this, _eventDispatcher);
+    this->boardBuilder->create(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - offsetY));
     
     // create score background
     //const int scoreBoardMarginX = 10;
@@ -91,30 +87,6 @@ bool GameMain::init()
     return true;
 }
 
-PieceController** GameMain::createPieceControllers()
-{
-    const int Width  = 8;
-    const int Height = 8;
-    int Length = Width * Height;
-    PieceController **pieceControllers = new PieceController*[Length];
-    
-    for(int i = 0; i < Length; i++) {
-        int x = i % Width;
-        int y = i / Width;
-        Sprite *blackSprite = Sprite::createWithSpriteFrameName("black.png");
-        Sprite *whiteSprite = Sprite::createWithSpriteFrameName("white.png");
-        pieceControllers[i] = new PieceController(
-                                         blackSprite,
-                                         whiteSprite,
-                                         PieceController::PieceColor::White,
-                                         Vec2(blackSprite->getContentSize().width * x, blackSprite->getContentSize().height * y));
-        
-        this->addChild(blackSprite, 3);
-        this->addChild(whiteSprite, 3);
-    }
-    
-    return pieceControllers;
-}
 
 
 void GameMain::menuCloseCallback(Ref* pSender)
@@ -134,11 +106,9 @@ void GameMain::menuCloseCallback(Ref* pSender)
 void GameMain::onClickHomeButton(cocos2d::Ref *pSender)
 {
     log("home button 押された");
-    this->pieceController->changeColor();
 }
 
 void GameMain::onClickSettingButton(cocos2d::Ref *pSender)
 {
     log("setting button 押された");
-    this->pieceController->show();
 }
