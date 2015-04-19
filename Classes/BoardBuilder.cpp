@@ -28,8 +28,11 @@ void BoardBuilder::create(cocos2d::Vec2 centerPos)
     this->pieceControllers = this->createPieceControllers(centerPos);
     this->pieceControllersHolder = new PieceControllersHolder(pieceControllers);
     
+    
+    this->boardModel = new BoardModel();
+    
     /// BoardControllerの生成
-    this->boardController = new BoardController(boardSprite, this->pieceControllersHolder, this->eventDispatcher);
+    this->boardController = new BoardController(boardSprite, this->pieceControllersHolder, this->boardModel, this->eventDispatcher);
 }
 
 PieceController** BoardBuilder::createPieceControllers(cocos2d::Vec2 centerPos)

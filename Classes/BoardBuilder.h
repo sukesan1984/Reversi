@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "cocos2d.h"
 #include "BoardController.h"
+#include "BoardModel.h"
 #include "PieceController.h"
 #include "PieceControllersHolder.h"
 
@@ -29,6 +30,8 @@ private:
     PieceControllersHolder* pieceControllersHolder;
     cocos2d::Sprite *boardSprite;
     cocos2d::Sprite** pieceSprites;
+    BoardModel * boardModel;
+    
 public:
     BoardBuilder();
     BoardBuilder(cocos2d::Layer* parentLayer, cocos2d::EventDispatcher* eventDispatcher);

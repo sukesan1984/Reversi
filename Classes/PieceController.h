@@ -25,6 +25,7 @@ public:
     bool isShown = false;
     void changeColor();
     void show();
+    void show(PieceColor color);
 private:
     cocos2d::Sprite *blackSprite;
     cocos2d::Sprite *whiteSprite;

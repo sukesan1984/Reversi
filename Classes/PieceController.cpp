@@ -91,6 +91,32 @@ void PieceController::show()
     this->whiteSprite->runAction(sequence1);
 }
 
+void PieceController::show(PieceColor color)
+{
+    if(this->currentColor == color)
+    {
+        this->show();
+    }
+    else
+    {
+        this->currentColor    = color;
+        switch(this->currentColor)
+        {
+            case PieceColor::White:
+                this->blackSprite->setScale(0.0f, 1.0f);
+                this->whiteSprite->setScale(1.0f, 1.0f);
+                break;
+            case PieceColor::Black:
+                this->whiteSprite->setScale(0.0f, 1.0f);
+                this->blackSprite->setScale(1.0f, 1.0f);
+                break;
+            default:
+                break;
+        }
+        this->show();
+    }
+}
+
 void PieceController::setPosition(cocos2d::Vec2 position)
 {
     this->blackSprite->setPosition(position);

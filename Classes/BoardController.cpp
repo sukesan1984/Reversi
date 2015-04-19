@@ -13,9 +13,10 @@ BoardController::BoardController()
 {
 }
 
-BoardController::BoardController(cocos2d::Sprite* boardSprite, PieceControllersHolder *pieceControllersHolder, cocos2d::EventDispatcher* eventDispatcher)
+BoardController::BoardController(cocos2d::Sprite* boardSprite, PieceControllersHolder *pieceControllersHolder, BoardModel* boardModel, cocos2d::EventDispatcher* eventDispatcher)
 {
     this->boardSprite     = boardSprite;
+    this->boardModel      = boardModel;
     this->pieceControllersHolder = pieceControllersHolder;
     this->eventDispatcher = eventDispatcher;
     this->initialize();
@@ -40,6 +41,29 @@ void BoardController::initialize()
     listener1->onTouchEnded = CC_CALLBACK_2(BoardController::onTouchEnded, this);
 
     this->eventDispatcher->addEventListenerWithSceneGraphPriority(listener1, this->boardSprite);
+    
+    // ボードの初期化
+    for(int i = 0; i < 8; i++)
+    {
+        for(int j = 0; j < 8; j++)
+        {
+            BoardModel::State currentState =this->boardModel->getState(i, j);
+            if(currentState != BoardModel::State::None)
+            {
+                switch(currentState)
+                {
+                    case BoardModel::State::Black:
+                        this->pieceControllersHolder->get(i, j)->show(PieceController::PieceColor::Black);
+                        break;
+                    case BoardModel::State::White:
+                        this->pieceControllersHolder->get(i, j)->show(PieceController::PieceColor::White);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+    }
 }
 
 bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
