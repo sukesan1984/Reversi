@@ -24,9 +24,10 @@ private:
     BoardController *boardController;
     cocos2d::Layer *parentLayer;
     cocos2d::EventDispatcher* eventDispatcher;
-    PieceController** createPieceControllers();
+    PieceController** createPieceControllers(cocos2d::Vec2 centerPos);
     PieceController** pieceControllers;
     PieceControllersHolder* pieceControllersHolder;
+    cocos2d::Sprite *boardSprite;
 public:
     BoardBuilder();
     BoardBuilder(cocos2d::Layer* parentLayer, cocos2d::EventDispatcher* eventDispatcher);

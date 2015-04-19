@@ -18,24 +18,30 @@ BoardBuilder::~BoardBuilder(){}
 
 void BoardBuilder::create(cocos2d::Vec2 centerPos)
 {
-    this->pieceControllers = this->createPieceControllers();
-    this->pieceControllersHolder = new PieceControllersHolder(pieceControllers);
     
     /// boardのview生成
-    cocos2d::Sprite *boardSprite = cocos2d::Sprite::createWithSpriteFrameName("board.png");
+    this->boardSprite = cocos2d::Sprite::createWithSpriteFrameName("board.png");
     boardSprite->setPosition(centerPos);
     this->parentLayer->addChild(boardSprite, 2);
+    
+    /// 駒達を作る
+    this->pieceControllers = this->createPieceControllers(centerPos);
+    this->pieceControllersHolder = new PieceControllersHolder(pieceControllers);
     
     /// BoardControllerの生成
     this->boardController = new BoardController(boardSprite, this->pieceControllersHolder, this->eventDispatcher);
 }
 
-PieceController** BoardBuilder::createPieceControllers()
+PieceController** BoardBuilder::createPieceControllers(cocos2d::Vec2 centerPos)
 {
     const int Width  = 8;
     const int Height = 8;
     int Length = Width * Height;
     PieceController **pieceControllers = new PieceController*[Length];
+    
+    float width = this->boardSprite->getContentSize().width / (float) Width;
+    float height = this->boardSprite->getContentSize().height / (float) Height;
+    
     
     for(int i = 0; i < Length; i++) {
         int x = i % Width;
@@ -46,7 +52,8 @@ PieceController** BoardBuilder::createPieceControllers()
                                          blackSprite,
                                          whiteSprite,
                                          PieceController::PieceColor::White,
-                                                  cocos2d::Vec2(blackSprite->getContentSize().width * x, blackSprite->getContentSize().height * y));
+                                                  cocos2d::Vec2(centerPos.x - this->boardSprite->getContentSize().width / 2 + width * x + width / 2,
+                                                                centerPos.y - this->boardSprite->getContentSize().height / 2 + height * y + height / 2));
         
         this->parentLayer->addChild(blackSprite, 3);
         this->parentLayer->addChild(whiteSprite, 3);
