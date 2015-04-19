@@ -33,7 +33,12 @@ void BoardBuilder::create(cocos2d::Vec2 centerPos)
     this->boardModel = new BoardModel();
     
     /// BoardControllerの生成
-    this->boardController = new BoardController(boardSprite, this->pieceControllersHolder, this->boardModel, this->eventDispatcher, this->turnController);
+    this->boardController = new BoardController(boardSprite,
+                                                this->pieceControllersHolder,
+                                                this->markControllers,
+                                                this->boardModel,
+                                                this->eventDispatcher,
+                                                this->turnController);
 }
 
 PieceController** BoardBuilder::createPieceControllers(cocos2d::Vec2 centerPos)
@@ -42,7 +47,9 @@ PieceController** BoardBuilder::createPieceControllers(cocos2d::Vec2 centerPos)
     const int Height = 8;
     int Length = Width * Height;
     PieceController **pieceControllers = new PieceController*[Length];
+    this->markControllers = new MarkController*[Length];
     this->pieceSprites = new cocos2d::Sprite*[Width * Height * 2]; //数 * 2 (black white)
+    this->markSprites  = new cocos2d::Sprite*[Width * Height];
     
     float width = this->boardSprite->getContentSize().width / (float) Width;
     float height = this->boardSprite->getContentSize().height / (float) Height;
@@ -60,9 +67,14 @@ PieceController** BoardBuilder::createPieceControllers(cocos2d::Vec2 centerPos)
                                          PieceController::PieceColor::White,
                                                   cocos2d::Vec2(centerPos.x - this->boardSprite->getContentSize().width / 2 + width * x + width / 2,
                                                                 centerPos.y - this->boardSprite->getContentSize().height / 2 + height * y + height / 2));
+        cocos2d::Sprite *markSprite = cocos2d::Sprite::createWithSpriteFrameName("candidate.png");
+        this->markSprites[i] = markSprite;
+        this->markControllers[i] = new MarkController(markSprite, cocos2d::Vec2(centerPos.x - this->boardSprite->getContentSize().width / 2 + width * x + width / 2,
+                                                                centerPos.y - this->boardSprite->getContentSize().height / 2 + height * y + height / 2));
         
         this->parentLayer->addChild(blackSprite, 3);
         this->parentLayer->addChild(whiteSprite, 3);
+        this->parentLayer->addChild(markSprite, 3);
     }
     
     return pieceControllers;

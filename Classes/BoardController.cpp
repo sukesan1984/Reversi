@@ -13,11 +13,17 @@ BoardController::BoardController()
 {
 }
 
-BoardController::BoardController(cocos2d::Sprite* boardSprite, PieceControllersHolder *pieceControllersHolder, BoardModel* boardModel, cocos2d::EventDispatcher* eventDispatcher, TurnController* turnController)
+BoardController::BoardController(cocos2d::Sprite* boardSprite,
+                                 PieceControllersHolder *pieceControllersHolder,
+                                 MarkController **markControllers,
+                                 BoardModel* boardModel,
+                                 cocos2d::EventDispatcher* eventDispatcher,
+                                 TurnController* turnController)
 {
     this->boardSprite     = boardSprite;
     this->boardModel      = boardModel;
     this->pieceControllersHolder = pieceControllersHolder;
+    this->markControllers = markControllers;
     this->eventDispatcher = eventDispatcher;
     this->turnController  = turnController;
     this->initialize();
@@ -98,6 +104,8 @@ bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
                     break;
             }
             this->turnController->changeTurn();
+            this->showMarkers();
+            
         }
         
         return true;
@@ -125,4 +133,24 @@ Point BoardController::getIndex(cocos2d::Vec2 locationInNode)
     point.y = indexY;
     
     return point;
+}
+
+void BoardController::showMarkers()
+{
+    for(int i = 0; i < 8; i++)
+    {
+        for(int j = 0; j < 8; j++)
+        {
+            BoardModel::State currentState =this->boardModel->getState(i, j);
+            int index = 8 * j + i;
+            if(currentState == BoardModel::State::Marked)
+            {
+                this->markControllers[index]->show();
+            }
+            else
+            {
+                this->markControllers[index]->hide();
+            }
+        }
+    }
 }

@@ -16,6 +16,7 @@
 #include "PieceController.h"
 #include "PieceControllersHolder.h"
 #include "TurnController.h"
+#include "MarkController.h"
 
 ///////////////////
 /// Boardにまつわるいろいろを生成・管理するクラス
@@ -31,8 +32,10 @@ private:
     PieceControllersHolder* pieceControllersHolder;
     cocos2d::Sprite *boardSprite;
     cocos2d::Sprite** pieceSprites;
+    cocos2d::Sprite** markSprites;
     BoardModel * boardModel;
     TurnController* turnController;
+    MarkController** markControllers;
 public:
     BoardBuilder();
     BoardBuilder(cocos2d::Layer* parentLayer, cocos2d::EventDispatcher* eventDispatcher, TurnController* turnController);

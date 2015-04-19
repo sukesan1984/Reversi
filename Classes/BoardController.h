@@ -14,6 +14,7 @@
 #include "PieceControllersHolder.h"
 #include "BoardModel.h"
 #include "TurnController.h"
+#include "MarkController.h"
 
 struct Point {
     int x;
@@ -26,6 +27,7 @@ private:
     cocos2d::Sprite* boardSprite;
     cocos2d::EventDispatcher* eventDispatcher;
     PieceControllersHolder *pieceControllersHolder;
+    MarkController **markControllers;
     BoardModel* boardModel;
     TurnController* turnController;
     
@@ -35,9 +37,15 @@ private:
     void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event);
     
     Point getIndex(cocos2d::Vec2 locationInNode);
+    void showMarkers();
 public:
     BoardController();
-    BoardController(cocos2d::Sprite* boardSprite, PieceControllersHolder* pieceControllersHolder, BoardModel* boardModel, cocos2d::EventDispatcher* eventDispather, TurnController* turnController);
+    BoardController(cocos2d::Sprite* boardSprite,
+                    PieceControllersHolder* pieceControllersHolder,
+                    MarkController **markControllers,
+                    BoardModel* boardModel,
+                    cocos2d::EventDispatcher* eventDispather,
+                    TurnController* turnController);
     ~BoardController();
 };
 
