@@ -74,9 +74,11 @@ bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
         Point touchPoint = this->getIndex(locationInNode);
         cocos2d::log("[index] x: %d, y:%d", touchPoint.x, touchPoint.y);
         PieceController *pieceController = this->pieceControllersHolder->get(touchPoint.x, touchPoint.y);
+        this->boardModel->removeMarked();
         if(pieceController->isShown)
         {
             pieceController->changeColor();
+            this->boardModel->changeColor(touchPoint.x, touchPoint.y);
         }
         else
         {
@@ -84,9 +86,13 @@ bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
             {
                 case TurnController::Turn::Black:
                     pieceController->show(PieceController::PieceColor::Black);
+                    this->boardModel->setState(touchPoint.x, touchPoint.y, BoardModel::Black);
+                    this->boardModel->setMarked(BoardModel::White);
                     break;
                 case TurnController::Turn::White:
                     pieceController->show(PieceController::PieceColor::White);
+                    this->boardModel->setState(touchPoint.x, touchPoint.y, BoardModel::White);
+                    this->boardModel->setMarked(BoardModel::Black);
                     break;
                 default:
                     break;
