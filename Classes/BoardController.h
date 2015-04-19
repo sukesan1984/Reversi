@@ -13,6 +13,7 @@
 #include "cocos2d.h"
 #include "PieceControllersHolder.h"
 #include "BoardModel.h"
+#include "TurnController.h"
 
 struct Point {
     int x;
@@ -26,6 +27,7 @@ private:
     cocos2d::EventDispatcher* eventDispatcher;
     PieceControllersHolder *pieceControllersHolder;
     BoardModel* boardModel;
+    TurnController* turnController;
     
     void initialize();
     
@@ -35,7 +37,7 @@ private:
     Point getIndex(cocos2d::Vec2 locationInNode);
 public:
     BoardController();
-    BoardController(cocos2d::Sprite* boardSprite, PieceControllersHolder* pieceControllersHolder, BoardModel* boardModel, cocos2d::EventDispatcher* eventDispather);
+    BoardController(cocos2d::Sprite* boardSprite, PieceControllersHolder* pieceControllersHolder, BoardModel* boardModel, cocos2d::EventDispatcher* eventDispather, TurnController* turnController);
     ~BoardController();
 };
 

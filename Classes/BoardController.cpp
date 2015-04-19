@@ -13,12 +13,13 @@ BoardController::BoardController()
 {
 }
 
-BoardController::BoardController(cocos2d::Sprite* boardSprite, PieceControllersHolder *pieceControllersHolder, BoardModel* boardModel, cocos2d::EventDispatcher* eventDispatcher)
+BoardController::BoardController(cocos2d::Sprite* boardSprite, PieceControllersHolder *pieceControllersHolder, BoardModel* boardModel, cocos2d::EventDispatcher* eventDispatcher, TurnController* turnController)
 {
     this->boardSprite     = boardSprite;
     this->boardModel      = boardModel;
     this->pieceControllersHolder = pieceControllersHolder;
     this->eventDispatcher = eventDispatcher;
+    this->turnController  = turnController;
     this->initialize();
 }
 
@@ -79,7 +80,18 @@ bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
         }
         else
         {
-            pieceController->show();
+            switch(this->turnController->getCurrentTurn())
+            {
+                case TurnController::Turn::Black:
+                    pieceController->show(PieceController::PieceColor::Black);
+                    break;
+                case TurnController::Turn::White:
+                    pieceController->show(PieceController::PieceColor::White);
+                    break;
+                default:
+                    break;
+            }
+            this->turnController->changeTurn();
         }
         
         return true;

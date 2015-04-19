@@ -9,10 +9,11 @@
 #include "BoardBuilder.h"
 
 BoardBuilder::BoardBuilder(){}
-BoardBuilder::BoardBuilder(cocos2d::Layer *parentLayer, cocos2d::EventDispatcher* eventDispatcher)
+BoardBuilder::BoardBuilder(cocos2d::Layer *parentLayer, cocos2d::EventDispatcher* eventDispatcher, TurnController* turnController)
 {
     this->parentLayer = parentLayer;
     this->eventDispatcher = eventDispatcher;
+    this->turnController = turnController;
 }
 BoardBuilder::~BoardBuilder(){}
 
@@ -32,7 +33,7 @@ void BoardBuilder::create(cocos2d::Vec2 centerPos)
     this->boardModel = new BoardModel();
     
     /// BoardControllerの生成
-    this->boardController = new BoardController(boardSprite, this->pieceControllersHolder, this->boardModel, this->eventDispatcher);
+    this->boardController = new BoardController(boardSprite, this->pieceControllersHolder, this->boardModel, this->eventDispatcher, this->turnController);
 }
 
 PieceController** BoardBuilder::createPieceControllers(cocos2d::Vec2 centerPos)

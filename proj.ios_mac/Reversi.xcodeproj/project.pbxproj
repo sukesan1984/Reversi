@@ -28,6 +28,7 @@
 		25CD2EEE1AE2CBBC00869579 /* PieceControllersHolder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25CD2EEC1AE2CBBC00869579 /* PieceControllersHolder.cpp */; };
 		25CD2EF11AE3588800869579 /* BoardBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25CD2EEF1AE3588700869579 /* BoardBuilder.cpp */; };
 		25CD2EF41AE3721C00869579 /* BoardModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25CD2EF21AE3721C00869579 /* BoardModel.cpp */; };
+		25CD2EF71AE37D4400869579 /* TurnController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25CD2EF51AE37D4400869579 /* TurnController.cpp */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
 		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
@@ -143,6 +144,8 @@
 		25CD2EF01AE3588700869579 /* BoardBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardBuilder.h; sourceTree = "<group>"; };
 		25CD2EF21AE3721C00869579 /* BoardModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoardModel.cpp; sourceTree = "<group>"; };
 		25CD2EF31AE3721C00869579 /* BoardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoardModel.h; sourceTree = "<group>"; };
+		25CD2EF51AE37D4400869579 /* TurnController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TurnController.cpp; sourceTree = "<group>"; };
+		25CD2EF61AE37D4400869579 /* TurnController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurnController.h; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
@@ -359,6 +362,8 @@
 				25CD2EF01AE3588700869579 /* BoardBuilder.h */,
 				25CD2EF21AE3721C00869579 /* BoardModel.cpp */,
 				25CD2EF31AE3721C00869579 /* BoardModel.h */,
+				25CD2EF51AE37D4400869579 /* TurnController.cpp */,
+				25CD2EF61AE37D4400869579 /* TurnController.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -554,6 +559,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25CD2EF71AE37D4400869579 /* TurnController.cpp in Sources */,
 				25CD2EEB1AE2A72100869579 /* PieceController.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameMainScene.cpp in Sources */,

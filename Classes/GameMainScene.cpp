@@ -69,9 +69,12 @@ bool GameMain::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
     
+    // create TurnController;
+    this->turnController = new TurnController();
+    
     // create board
     const int offsetY = 40;
-    this->boardBuilder = new BoardBuilder(this, _eventDispatcher);
+    this->boardBuilder = new BoardBuilder(this, _eventDispatcher, this->turnController);
     this->boardBuilder->create(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - offsetY));
     
     // create score background

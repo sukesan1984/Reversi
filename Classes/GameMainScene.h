@@ -4,12 +4,14 @@
 #include "cocos2d.h"
 #include "BoardBuilder.h"
 #include "BoardController.h"
+#include "TurnController.h"
 
 class GameMain : public cocos2d::Layer
 {
 private:
     BoardController* boardController;
     BoardBuilder* boardBuilder;
+    TurnController* turnController;
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
