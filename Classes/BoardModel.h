@@ -32,6 +32,7 @@ public:
     void setState(int x, int y, State state);
     void removeMarked();
     void changeColor(int x, int y);
+    void reverse(int x, int y, State state);
 private:
     enum Direction{
         Left      = 1,
@@ -45,6 +46,7 @@ private:
     };
     State *boards;
     void setMarked(State state, int x, int y, Direction checkDirection);
+    bool reverse(State state,   int x, int y, Direction checkDirection);
     
     bool isEqualState(State state, int x, int y);
 };

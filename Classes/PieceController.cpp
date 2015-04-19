@@ -71,6 +71,12 @@ void PieceController::changeColor()
     this->isPlaying = !afterAction->isDone();
 }
 
+void PieceController::changeColor(PieceController::PieceColor color)
+{
+    if(this->currentColor == color) return;
+    this->changeColor();
+}
+
 void PieceController::show()
 {
     if(this->isPlaying) return;

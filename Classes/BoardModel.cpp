@@ -38,6 +38,102 @@ void BoardModel::changeColor(int x, int y)
     }
 }
 
+void BoardModel::reverse(int x, int y, BoardModel::State state)
+{
+    if(state != State::Black && state != State::White) return;
+    State targetState = (state == State::Black) ? State::White : State::Black;
+    this->reverse(targetState, x - 1, y,     Direction::Left);
+    this->reverse(targetState, x - 1, y + 1, Direction::LeftTop);
+    this->reverse(targetState, x    , y + 1, Direction::Top);
+    this->reverse(targetState, x + 1, y + 1, Direction::RightTop);
+    this->reverse(targetState, x + 1, y    , Direction::Right);
+    this->reverse(targetState, x + 1, y - 1, Direction::RightDown);
+    this->reverse(targetState, x    , y - 1, Direction::Down);
+    this->reverse(targetState, x - 1, y - 1, Direction::LeftDown);
+}
+
+bool BoardModel::reverse(BoardModel::State state, int x, int y, BoardModel::Direction checkDirection)
+{
+    State targetState = (state == State::Black) ? State::White : State::Black;
+    if(this->isEqualState(state, x, y))
+    {
+        switch(checkDirection)
+        {
+            case Direction::Right:
+                if(this->reverse(state, x + 1, y, checkDirection))
+                {
+                    this->changeColor(x, y);
+                    return true;
+                }
+                return false;
+                break;
+            case Direction::RightDown:
+                if(this->reverse(state, x + 1, y - 1, checkDirection))
+                {
+                    this->changeColor(x, y);
+                    return true;
+                }
+                return false;
+                break;
+            case Direction::Down:
+                if(this->reverse(state, x    , y - 1, checkDirection))
+                {
+                    this->changeColor(x, y);
+                    return true;
+                }
+                return false;
+                break;
+            case Direction::LeftDown:
+                if(this->reverse(state, x - 1, y - 1, checkDirection))
+                {
+                    this->changeColor(x, y);
+                    return true;
+                }
+                return false;
+                break;
+            case Direction::Left:
+                if(this->reverse(state, x - 1, y,     checkDirection))
+                {
+                    this->changeColor(x, y);
+                    return true;
+                }
+                return false;
+                break;
+            case Direction::LeftTop:
+                if(this->reverse(state, x - 1, y + 1, checkDirection))
+                {
+                    this->changeColor(x, y);
+                    return true;
+                }
+                return false;
+                break;
+            case Direction::Top:
+                if(this->reverse(state, x    , y + 1, checkDirection))
+                {
+                    this->changeColor(x, y);
+                    return true;
+                }
+                return false;
+                break;
+            case Direction::RightTop:
+                if(this->reverse(state, x + 1, y + 1, checkDirection))
+                {
+                    this->changeColor(x, y);
+                    return true;
+                }
+                return false;
+                break;
+            default:
+                break;
+        }
+    }
+    else if(this->isEqualState(targetState, x, y))
+    {
+        return true;
+    }
+    return false;
+}
+
 void BoardModel::setState(int x, int y, BoardModel::State state)
 {
     int i = y * 8 + x;

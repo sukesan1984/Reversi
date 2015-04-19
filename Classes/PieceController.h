@@ -25,6 +25,7 @@ public:
     ~PieceController();
     bool isShown = false;
     void changeColor();
+    void changeColor(PieceColor color);
     void show();
     void show(PieceColor color);
     void show(BoardModel::State state);

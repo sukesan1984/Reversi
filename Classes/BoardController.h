@@ -38,6 +38,7 @@ private:
     
     Point getIndex(cocos2d::Vec2 locationInNode);
     void showMarkers();
+    void startReverse();
 public:
     BoardController();
     BoardController(cocos2d::Sprite* boardSprite,

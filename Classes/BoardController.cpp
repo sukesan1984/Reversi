@@ -83,8 +83,6 @@ bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
         this->boardModel->removeMarked();
         if(pieceController->isShown)
         {
-            pieceController->changeColor();
-            this->boardModel->changeColor(touchPoint.x, touchPoint.y);
         }
         else
         {
@@ -93,19 +91,21 @@ bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
                 case TurnController::Turn::Black:
                     pieceController->show(PieceController::PieceColor::Black);
                     this->boardModel->setState(touchPoint.x, touchPoint.y, BoardModel::Black);
+                    this->boardModel->reverse(touchPoint.x, touchPoint.y, BoardModel::Black);
                     this->boardModel->setMarked(BoardModel::White);
                     break;
                 case TurnController::Turn::White:
                     pieceController->show(PieceController::PieceColor::White);
                     this->boardModel->setState(touchPoint.x, touchPoint.y, BoardModel::White);
+                    this->boardModel->reverse(touchPoint.x, touchPoint.y, BoardModel::White);
                     this->boardModel->setMarked(BoardModel::Black);
                     break;
                 default:
                     break;
             }
             this->turnController->changeTurn();
+            this->startReverse();
             this->showMarkers();
-            
         }
         
         return true;
@@ -135,6 +135,8 @@ Point BoardController::getIndex(cocos2d::Vec2 locationInNode)
     return point;
 }
 
+
+
 void BoardController::showMarkers()
 {
     for(int i = 0; i < 8; i++)
@@ -150,6 +152,28 @@ void BoardController::showMarkers()
             else
             {
                 this->markControllers[index]->hide();
+            }
+        }
+    }
+}
+
+void BoardController::startReverse()
+{
+    for(int i = 0; i < 8; i++)
+    {
+        for(int j = 0; j < 8; j++)
+        {
+            BoardModel::State currentState =this->boardModel->getState(i, j);
+            switch(currentState)
+            {
+                case BoardModel::State::White:
+                    this->pieceControllersHolder->get(i, j)->changeColor(PieceController::White);
+                    break;
+                case BoardModel::State::Black:
+                    this->pieceControllersHolder->get(i, j)->changeColor(PieceController::Black);
+                    break;
+                default:
+                    break;
             }
         }
     }
