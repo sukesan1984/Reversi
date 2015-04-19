@@ -28,6 +28,7 @@ private:
     PieceController** pieceControllers;
     PieceControllersHolder* pieceControllersHolder;
     cocos2d::Sprite *boardSprite;
+    cocos2d::Sprite** pieceSprites;
 public:
     BoardBuilder();
     BoardBuilder(cocos2d::Layer* parentLayer, cocos2d::EventDispatcher* eventDispatcher);
