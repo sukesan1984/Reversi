@@ -33,6 +33,7 @@ public:
     void removeMarked();
     void changeColor(int x, int y);
     void reverse(int x, int y, State state);
+    bool isMarked(int x, int y);
 private:
     enum Direction{
         Left      = 1,

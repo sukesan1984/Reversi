@@ -58,6 +58,8 @@ void BoardController::initialize()
             this->pieceControllersHolder->get(i, j)->show(currentState);
         }
     }
+    this->boardModel->setMarked(BoardModel::Black);
+    this->showMarkers();
 }
 
 bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
@@ -80,6 +82,11 @@ bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
         Point touchPoint = this->getIndex(locationInNode);
         cocos2d::log("[index] x: %d, y:%d", touchPoint.x, touchPoint.y);
         PieceController *pieceController = this->pieceControllersHolder->get(touchPoint.x, touchPoint.y);
+        if(!this->boardModel->isMarked(touchPoint.x, touchPoint.y))
+        {
+            return false;
+        }
+            
         this->boardModel->removeMarked();
         if(pieceController->isShown)
         {

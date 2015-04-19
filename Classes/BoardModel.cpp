@@ -52,6 +52,12 @@ void BoardModel::reverse(int x, int y, BoardModel::State state)
     this->reverse(targetState, x - 1, y - 1, Direction::LeftDown);
 }
 
+bool BoardModel::isMarked(int x, int y)
+{
+    State state = this->getState(x, y);
+    return state == State::Marked;
+}
+
 bool BoardModel::reverse(BoardModel::State state, int x, int y, BoardModel::Direction checkDirection)
 {
     State targetState = (state == State::Black) ? State::White : State::Black;
