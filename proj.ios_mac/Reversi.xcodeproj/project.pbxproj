@@ -11,6 +11,7 @@
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		254CBF871AE3A10D003A33C2 /* PhaseController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 254CBF851AE3A10C003A33C2 /* PhaseController.cpp */; };
 		2561686F1AE2507800C983C5 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 2561686E1AE2507800C983C5 /* sample.png */; };
 		25664CF61AD9151C000B9711 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664CF41AD91212000B9711 /* GoogleMobileAds.framework */; };
 		25664CF81AD9153A000B9711 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664CF71AD9153A000B9711 /* AdSupport.framework */; };
@@ -118,6 +119,8 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* Reversi iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reversi iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		254CBF851AE3A10C003A33C2 /* PhaseController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhaseController.cpp; sourceTree = "<group>"; };
+		254CBF861AE3A10C003A33C2 /* PhaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhaseController.h; sourceTree = "<group>"; };
 		2561686E1AE2507800C983C5 /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
 		25664CEF1AD910FF000B9711 /* libPods-Reversi iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Reversi iOS.a"; path = "/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/../build/Debug-iphoneos/libPods-Reversi iOS.a"; sourceTree = "<absolute>"; };
 		25664CF21AD9120A000B9711 /* libPods-Reversi iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Reversi iOS.a"; path = "/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/../build/Debug-iphoneos/libPods-Reversi iOS.a"; sourceTree = "<absolute>"; };
@@ -364,6 +367,8 @@
 				25CD2EF31AE3721C00869579 /* BoardModel.h */,
 				25CD2EF51AE37D4400869579 /* TurnController.cpp */,
 				25CD2EF61AE37D4400869579 /* TurnController.h */,
+				254CBF851AE3A10C003A33C2 /* PhaseController.cpp */,
+				254CBF861AE3A10C003A33C2 /* PhaseController.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -560,6 +565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25CD2EF71AE37D4400869579 /* TurnController.cpp in Sources */,
+				254CBF871AE3A10D003A33C2 /* PhaseController.cpp in Sources */,
 				25CD2EEB1AE2A72100869579 /* PieceController.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameMainScene.cpp in Sources */,
