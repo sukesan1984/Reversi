@@ -56,6 +56,7 @@ public:
     void setOnClickHandler(DelegateBase* delegate);
     bool putPiece(int x, int y, Color color);
     void setMark(Color color);
+    void removeMark();
     /// 置ける位置があるかどうかを返す
     bool hasPuttablePlace(Color color);
 };

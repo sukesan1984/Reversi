@@ -18,10 +18,6 @@
 /// ターンは黒のターンと白のターンがある。
 class TurnController{
 public:
-    enum Turn{
-        Black = 1,
-        White = 2
-    };
     ///フェーズ
     enum Phase {
         SetMark         = 0, /// オセロを置ける位置をマークする
@@ -35,12 +31,12 @@ public:
     ~TurnController();
     
     void changeTurn();
-    Turn getCurrentTurn();
+    Color getCurrentTurn();
     ///PlayerがCellを選択したときに呼ばれる。
     void onSelectCell(int x, int y);
     void update();
 private:
-    Turn currentTurn;
+    Color currentTurn;
     Player* playerBlack;
     Player* playerWhite;
     

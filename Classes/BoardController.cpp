@@ -172,7 +172,6 @@ bool BoardController::putPiece(int x, int y, Color color)
         return false;
     }
         
-    this->boardModel->removeMarked();
     if(pieceController->isShown)
     {
         return false;
@@ -185,21 +184,30 @@ bool BoardController::putPiece(int x, int y, Color color)
                 pieceController->show(Color::Black);
                 this->boardModel->setState(x, y, Color::Black);
                 this->boardModel->reverse(x, y, Color::Black);
-                this->boardModel->setMarked(Color::White);
                 break;
             case Color::White:
                 pieceController->show(Color::White);
                 this->boardModel->setState(x, y, Color::White);
                 this->boardModel->reverse(x, y, Color::White);
-                this->boardModel->setMarked(Color::Black);
                 break;
             default:
                 break;
         }
         this->startReverse();
-        this->showMarkers();
     }
     return true;
+}
+
+void BoardController::setMark(Color color)
+{
+    this->boardModel->setMarked(color);
+    this->showMarkers();
+}
+
+void BoardController::removeMark()
+{
+    this->boardModel->removeMarked();
+    this->showMarkers();
 }
 
 bool BoardController::hasPuttablePlace(Color color)
