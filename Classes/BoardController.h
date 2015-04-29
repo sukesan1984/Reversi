@@ -13,13 +13,16 @@
 #include "cocos2d.h"
 #include "PieceControllersHolder.h"
 #include "BoardModel.h"
-#include "TurnController.h"
 #include "MarkController.h"
+#include "DelegateBase.h"
+
+#include <vector>
 
 struct Point {
     int x;
     int y;
 };
+
 class BoardController
 {
 private:
@@ -29,7 +32,8 @@ private:
     PieceControllersHolder *pieceControllersHolder;
     MarkController **markControllers;
     BoardModel* boardModel;
-    TurnController* turnController;
+    //TurnController* turnController;
+    std::vector<DelegateBase*> listeners;
     
     void initialize();
     
@@ -45,9 +49,10 @@ public:
                     PieceControllersHolder* pieceControllersHolder,
                     MarkController **markControllers,
                     BoardModel* boardModel,
-                    cocos2d::EventDispatcher* eventDispather,
-                    TurnController* turnController);
+                    cocos2d::EventDispatcher* eventDispather);
+                    //TurnController* turnController);
     ~BoardController();
+    void setOnClickHandler(DelegateBase* delegate);
 };
 
 #endif /* defined(__Reversi__BoardController__) */

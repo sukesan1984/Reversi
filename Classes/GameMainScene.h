@@ -5,6 +5,9 @@
 #include "BoardBuilder.h"
 #include "BoardController.h"
 #include "TurnController.h"
+#include "Player.h"
+#include "Const.h"
+#include "Delegate.h"
 
 class GameMain : public cocos2d::Layer
 {

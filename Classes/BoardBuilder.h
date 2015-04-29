@@ -15,7 +15,6 @@
 #include "BoardModel.h"
 #include "PieceController.h"
 #include "PieceControllersHolder.h"
-#include "TurnController.h"
 #include "MarkController.h"
 
 ///////////////////
@@ -34,14 +33,14 @@ private:
     cocos2d::Sprite** pieceSprites;
     cocos2d::Sprite** markSprites;
     BoardModel * boardModel;
-    TurnController* turnController;
+    //TurnController* turnController;
     MarkController** markControllers;
 public:
     BoardBuilder();
-    BoardBuilder(cocos2d::Layer* parentLayer, cocos2d::EventDispatcher* eventDispatcher, TurnController* turnController);
+    BoardBuilder(cocos2d::Layer* parentLayer, cocos2d::EventDispatcher* eventDispatcher);
     ~BoardBuilder();
     
     ///中心座標を与えてその位置を中心に生成する。
-    void create(cocos2d::Vec2 centerPos);
+    BoardController* create(cocos2d::Vec2 centerPos);
 };
 #endif /* defined(__Reversi__BoardBuilder__) */

@@ -8,10 +8,13 @@
 
 #include "TurnController.h"
 
-TurnController::TurnController()
+TurnController::TurnController(Player* playerBlack, Player* playerWhite)
 {
     this->currentTurn = Turn::Black;
+    this->playerBlack = playerBlack;
+    this->playerWhite = playerWhite;
 }
+
 TurnController::~TurnController(){}
 
 TurnController::Turn TurnController::getCurrentTurn()
