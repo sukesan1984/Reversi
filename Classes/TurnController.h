@@ -24,9 +24,11 @@ public:
     };
     ///フェーズ
     enum Phase {
-        Put     = 1, ///オセロを置く
-        Reverse = 2, ///オセロをひっくりがえす
-        TurnEnd = 3, ///終了
+        SetMark         = 0, /// オセロを置ける位置をマークする
+        SearchPuttable  = 1, ///オセロを置ける位置を探す
+        Put     = 2, ///オセロを置く
+        Reverse = 3, ///オセロをひっくりがえす
+        TurnEnd = 4, ///終了
     };
     
     TurnController(Player* playerBlack, Player* playerWhite, BoardController* boardController);
@@ -44,7 +46,7 @@ private:
     
     BoardController *boardController;
     
-    Phase currentPhase = Put;
+    Phase currentPhase = SearchPuttable;
     
     void setPhase(Phase phase);
 };

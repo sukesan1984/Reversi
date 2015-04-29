@@ -10,6 +10,7 @@
 #define __Reversi__BoardModel__
 
 #include <stdio.h>
+#include "Const.h"
 
 /////////////////////////////////
 ///ボードの状態を保持する
@@ -34,6 +35,7 @@ public:
     void changeColor(int x, int y);
     void reverse(int x, int y, State state);
     bool isMarked(int x, int y);
+    bool hasPuttablePlace(Color color);
 private:
     enum Direction{
         Left      = 1,
@@ -48,7 +50,6 @@ private:
     State *boards;
     void setMarked(State state, int x, int y, Direction checkDirection);
     bool reverse(State state,   int x, int y, Direction checkDirection);
-    
     bool isEqualState(State state, int x, int y);
 };
 

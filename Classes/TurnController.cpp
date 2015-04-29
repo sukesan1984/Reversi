@@ -72,6 +72,8 @@ void TurnController::update()
 {
     switch(this->currentPhase)
     {
+        case SearchPuttable:
+            break;
         case Put:
             return;
             break;

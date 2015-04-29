@@ -262,3 +262,8 @@ bool BoardModel::isEqualState(BoardModel::State state, int x, int y)
 }
 
 BoardModel::~BoardModel(){}
+
+bool BoardModel::hasPuttablePlace(Color color)
+{
+    return true;
+}

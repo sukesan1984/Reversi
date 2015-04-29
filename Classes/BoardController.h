@@ -55,6 +55,9 @@ public:
     ~BoardController();
     void setOnClickHandler(DelegateBase* delegate);
     bool putPiece(int x, int y, Color color);
+    void setMark(Color color);
+    /// 置ける位置があるかどうかを返す
+    bool hasPuttablePlace(Color color);
 };
 
 #endif /* defined(__Reversi__BoardController__) */

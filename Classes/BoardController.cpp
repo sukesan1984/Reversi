@@ -201,3 +201,8 @@ bool BoardController::putPiece(int x, int y, Color color)
     }
     return true;
 }
+
+bool BoardController::hasPuttablePlace(Color color)
+{
+    return true;
+}
