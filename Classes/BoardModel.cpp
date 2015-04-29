@@ -308,7 +308,15 @@ bool BoardModel::isEqualState(BoardModel::State state, int x, int y)
 
 BoardModel::~BoardModel(){}
 
-bool BoardModel::hasPuttablePlace(Color color)
+bool BoardModel::hasPuttablePlace()
 {
-    return true;
+    int markedPlace = 0;
+    for(int i = 0; i < 8 * 8; i++)
+    {
+        if(this->boards[i] == State::Marked)
+        {
+            markedPlace++;
+        }
+    }
+    return markedPlace > 0;
 }

@@ -58,7 +58,7 @@ public:
     void setMark(Color color);
     void removeMark();
     /// 置ける位置があるかどうかを返す
-    bool hasPuttablePlace(Color color);
+    bool hasPuttablePlace();
 };
 
 #endif /* defined(__Reversi__BoardController__) */

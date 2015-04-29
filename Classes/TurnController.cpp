@@ -81,7 +81,14 @@ void TurnController::update()
             this->setPhase(SearchPuttable);
             break;
         case SearchPuttable:
-            this->setPhase(Put);
+            if(this->boardController->hasPuttablePlace())
+            {
+                this->setPhase(Put);
+            }
+            else
+            {
+                this->setPhase(TurnEnd);
+            }
             break;
         case Put:
             return;

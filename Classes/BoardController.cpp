@@ -198,7 +198,7 @@ void BoardController::removeMark()
     this->showMarkers();
 }
 
-bool BoardController::hasPuttablePlace(Color color)
+bool BoardController::hasPuttablePlace()
 {
-    return true;
+    return this->boardModel->hasPuttablePlace();
 }

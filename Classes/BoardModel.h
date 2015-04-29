@@ -35,7 +35,7 @@ public:
     void changeColor(int x, int y);
     void reverse(int x, int y, Color color);
     bool isMarked(int x, int y);
-    bool hasPuttablePlace(Color color);
+    bool hasPuttablePlace();
 private:
 
     enum Direction{
