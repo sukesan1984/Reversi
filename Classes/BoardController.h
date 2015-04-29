@@ -15,6 +15,7 @@
 #include "BoardModel.h"
 #include "MarkController.h"
 #include "DelegateBase.h"
+#include "Const.h"
 
 #include <vector>
 
@@ -53,6 +54,7 @@ public:
                     //TurnController* turnController);
     ~BoardController();
     void setOnClickHandler(DelegateBase* delegate);
+    void putPiece(int x, int y, Color color);
 };
 
 #endif /* defined(__Reversi__BoardController__) */

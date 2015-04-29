@@ -8,7 +8,7 @@
 
 #include "TurnController.h"
 
-TurnController::TurnController(Player* playerBlack, Player* playerWhite)
+TurnController::TurnController(Player* playerBlack, Player* playerWhite, BoardController* boardController)
 {
     this->currentTurn = Turn::Black;
     this->playerBlack = playerBlack;
@@ -16,6 +16,8 @@ TurnController::TurnController(Player* playerBlack, Player* playerWhite)
     this->playerWhite = playerWhite;
     this->playerWhite->setOnSelectHandler(TouchDelegate<TurnController>::createDelegator(this, &TurnController::onSelectCell));
     this->playerBlack->setTurn(true);
+    
+    this->boardController = boardController;
 }
 
 TurnController::~TurnController(){}
@@ -48,6 +50,17 @@ void TurnController::changeTurn()
 void TurnController::onSelectCell(int x, int y)
 {
     cocos2d::log("%d のターン: %d, %d", this->currentTurn, x, y);
+    switch(this->currentTurn)
+    {
+        case Turn::Black:
+            this->boardController->putPiece(x, y, Color::Black);
+            break;
+        case Turn::White:
+            this->boardController->putPiece(x, y, Color::White);
+            break;
+        default:
+            break;
+    }
     this->setPhase(TurnEnd);
 }
 

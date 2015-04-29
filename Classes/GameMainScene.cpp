@@ -80,7 +80,7 @@ bool GameMain::init()
     this->boardController->setOnClickHandler(TouchDelegate<Player>::createDelegator(playerWhite, &Player::onCellClick));
     
     // create TurnController;
-    this->turnController = new TurnController(playerBlack, playerWhite);
+    this->turnController = new TurnController(playerBlack, playerWhite, this->boardController);
     
     this->schedule(schedule_selector(GameMain::update));
     

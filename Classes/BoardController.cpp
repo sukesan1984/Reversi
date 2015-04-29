@@ -81,39 +81,6 @@ bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
         
         Point touchPoint = this->getIndex(locationInNode);
         cocos2d::log("[index] x: %d, y:%d", touchPoint.x, touchPoint.y);
-        //PieceController *pieceController = this->pieceControllersHolder->get(touchPoint.x, touchPoint.y);
-        //if(!this->boardModel->isMarked(touchPoint.x, touchPoint.y))
-        //{
-        //    return false;
-        //}
-        //    
-        //this->boardModel->removeMarked();
-        //if(pieceController->isShown)
-        //{
-        //}
-        //else
-        //{
-        //    //switch(this->turnController->getCurrentTurn())
-        //    {
-        //        case TurnController::Turn::Black:
-        //            pieceController->show(PieceController::PieceColor::Black);
-        //            this->boardModel->setState(touchPoint.x, touchPoint.y, BoardModel::Black);
-        //            this->boardModel->reverse(touchPoint.x, touchPoint.y, BoardModel::Black);
-        //            this->boardModel->setMarked(BoardModel::White);
-        //            break;
-        //        case TurnController::Turn::White:
-        //            pieceController->show(PieceController::PieceColor::White);
-        //            this->boardModel->setState(touchPoint.x, touchPoint.y, BoardModel::White);
-        //            this->boardModel->reverse(touchPoint.x, touchPoint.y, BoardModel::White);
-        //            this->boardModel->setMarked(BoardModel::Black);
-        //            break;
-        //        default:
-        //            break;
-        //    }
-        //    this->turnController->changeTurn();
-        //    this->startReverse();
-        //    this->showMarkers();
-        //}
         std::vector<DelegateBase*>::iterator it;
         for(it = this->listeners.begin(); it != this->listeners.end(); ++it)
         {
@@ -197,3 +164,38 @@ void BoardController::setOnClickHandler(DelegateBase *delegate)
     this->listeners.push_back(delegate);
 }
 
+void BoardController::putPiece(int x, int y, Color color)
+{
+    PieceController *pieceController = this->pieceControllersHolder->get(x, y);
+    if(!this->boardModel->isMarked(x, y))
+    {
+        return;
+    }
+        
+    this->boardModel->removeMarked();
+    if(pieceController->isShown)
+    {
+    }
+    else
+    {
+        switch(color)
+        {
+            case Color::Black:
+                pieceController->show(PieceController::PieceColor::Black);
+                this->boardModel->setState(x, y, BoardModel::Black);
+                this->boardModel->reverse(x, y, BoardModel::Black);
+                this->boardModel->setMarked(BoardModel::White);
+                break;
+            case Color::White:
+                pieceController->show(PieceController::PieceColor::White);
+                this->boardModel->setState(x, y, BoardModel::White);
+                this->boardModel->reverse(x, y, BoardModel::White);
+                this->boardModel->setMarked(BoardModel::Black);
+                break;
+            default:
+                break;
+        }
+        this->startReverse();
+        this->showMarkers();
+    }
+}

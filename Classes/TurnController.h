@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "Player.h"
 #include "TouchDelegate.h"
+#include "BoardController.h"
 
 /// ターンを制御する奴
 /// ターンは黒のターンと白のターンがある。
@@ -28,7 +29,7 @@ public:
         TurnEnd = 3, ///終了
     };
     
-    TurnController(Player* playerBlack, Player* playerWhite);
+    TurnController(Player* playerBlack, Player* playerWhite, BoardController* boardController);
     ~TurnController();
     
     void changeTurn();
@@ -40,6 +41,8 @@ private:
     Turn currentTurn;
     Player* playerBlack;
     Player* playerWhite;
+    
+    BoardController *boardController;
     
     Phase currentPhase = Put;
     
