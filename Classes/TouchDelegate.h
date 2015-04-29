@@ -11,12 +11,13 @@
 
 #include <stdio.h>
 #include "DelegateBase.h"
+#include "Player.h"
 
 template <class T>
-class Delegate : public DelegateBase {
+class TouchDelegate : public DelegateBase {
 public:
-    Delegate(){};
-    virtual ~Delegate(){};
+    TouchDelegate(){};
+    virtual ~TouchDelegate(){};
     
     virtual void operator()(int value1, int value2){
         (m_obj->*m_func)(value1, value2); // ハンドラ実行
@@ -30,7 +31,7 @@ public:
     };
     
     static DelegateBase* createDelegator(T* obj, void(T::*func)(int, int)){
-        Delegate* dg = new Delegate;
+        TouchDelegate* dg = new TouchDelegate;
         dg->set(obj, func);
         return dg;
     }
@@ -38,7 +39,6 @@ public:
 protected:
     T* m_obj;
     EventFunc m_func;
-    
 };
 
 #endif /* defined(__Reversi__Delegate__) */

@@ -8,10 +8,9 @@
 
 #include "Player.h"
 
-Player::Player(Color playerColor, BoardController* boardController)
+Player::Player(Color playerColor)
 {
     this->playerColor = playerColor;
-    this->boardController = boardController;
 }
 
 Player::~Player(){}
@@ -27,4 +26,14 @@ void Player::onCellClick(int x, int y)
         return;
     cocos2d::log("x:%d, y:%d, color:%d", x, y, this->playerColor);
     
+    std::vector<DelegateBase*>::iterator it;
+    for(it = this->listeners.begin(); it != this->listeners.end(); ++it)
+    {
+        (**it)(x, y);
+    }
+}
+
+void Player::setOnSelectHandler(DelegateBase *delegate)
+{
+    this->listeners.push_back(delegate);
 }

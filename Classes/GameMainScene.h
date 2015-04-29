@@ -7,7 +7,7 @@
 #include "TurnController.h"
 #include "Player.h"
 #include "Const.h"
-#include "Delegate.h"
+#include "TouchDelegate.h"
 
 class GameMain : public cocos2d::Layer
 {
@@ -15,6 +15,7 @@ private:
     BoardController* boardController;
     BoardBuilder* boardBuilder;
     TurnController* turnController;
+    void update(float frame);
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();

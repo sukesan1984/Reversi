@@ -11,20 +11,23 @@
 
 #include <stdio.h>
 #include "Const.h"
-#include "BoardController.h"
+#include <vector>
+#include "DelegateBase.h"
 
 class Player
 {
-    BoardController* boardController;
     Color playerColor;
     bool isMyTurn = false;
+    std::vector<DelegateBase*> listeners;
 public:
-    Player(Color playerColor, BoardController* boardController);
+    Player(Color playerColor);
     ~Player();
     void setTurn(bool isMyTurn);
     
     // boardControllerがタップされたときに呼ばれる。
     void onCellClick(int x, int y);
+    
+    void setOnSelectHandler(DelegateBase* delegate);
 };
 
 #endif /* defined(__Reversi__Player__) */

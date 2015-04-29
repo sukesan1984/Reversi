@@ -17,5 +17,4 @@ public:
     virtual void operator()(int value1, int value2) = 0;
 };
 
-
 #endif
