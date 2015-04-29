@@ -69,13 +69,20 @@ bool GameMain::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
     
-    // create TurnController;
-    this->turnController = new TurnController();
-    
     // create board
     const int offsetY = 40;
-    this->boardBuilder = new BoardBuilder(this, _eventDispatcher, this->turnController);
-    this->boardBuilder->create(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - offsetY));
+    this->boardBuilder = new BoardBuilder(this, _eventDispatcher);
+    this->boardController = this->boardBuilder->create(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - offsetY));
+    
+    Player* playerBlack = new Player(Color::Black);
+    this->boardController->setOnClickHandler(TouchDelegate<Player>::createDelegator(playerBlack, &Player::onCellClick));
+    Player* playerWhite = new Player(Color::White);
+    this->boardController->setOnClickHandler(TouchDelegate<Player>::createDelegator(playerWhite, &Player::onCellClick));
+    
+    // create TurnController;
+    this->turnController = new TurnController(playerBlack, playerWhite);
+    
+    this->schedule(schedule_selector(GameMain::update));
     
     // create score background
     //const int scoreBoardMarginX = 10;
@@ -90,6 +97,11 @@ bool GameMain::init()
     return true;
 }
 
+
+void GameMain::update(float frame)
+{
+    this->turnController->update();
+}
 
 
 void GameMain::menuCloseCallback(Ref* pSender)

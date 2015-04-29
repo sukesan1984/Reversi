@@ -17,15 +17,15 @@ BoardController::BoardController(cocos2d::Sprite* boardSprite,
                                  PieceControllersHolder *pieceControllersHolder,
                                  MarkController **markControllers,
                                  BoardModel* boardModel,
-                                 cocos2d::EventDispatcher* eventDispatcher,
-                                 TurnController* turnController)
+                                 cocos2d::EventDispatcher* eventDispatcher)
+                                 //TurnController* turnController)
 {
     this->boardSprite     = boardSprite;
     this->boardModel      = boardModel;
     this->pieceControllersHolder = pieceControllersHolder;
     this->markControllers = markControllers;
     this->eventDispatcher = eventDispatcher;
-    this->turnController  = turnController;
+    //this->turnController  = turnController;
     this->initialize();
 }
 
@@ -81,39 +81,45 @@ bool BoardController::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event)
         
         Point touchPoint = this->getIndex(locationInNode);
         cocos2d::log("[index] x: %d, y:%d", touchPoint.x, touchPoint.y);
-        PieceController *pieceController = this->pieceControllersHolder->get(touchPoint.x, touchPoint.y);
-        if(!this->boardModel->isMarked(touchPoint.x, touchPoint.y))
+        //PieceController *pieceController = this->pieceControllersHolder->get(touchPoint.x, touchPoint.y);
+        //if(!this->boardModel->isMarked(touchPoint.x, touchPoint.y))
+        //{
+        //    return false;
+        //}
+        //    
+        //this->boardModel->removeMarked();
+        //if(pieceController->isShown)
+        //{
+        //}
+        //else
+        //{
+        //    //switch(this->turnController->getCurrentTurn())
+        //    {
+        //        case TurnController::Turn::Black:
+        //            pieceController->show(PieceController::PieceColor::Black);
+        //            this->boardModel->setState(touchPoint.x, touchPoint.y, BoardModel::Black);
+        //            this->boardModel->reverse(touchPoint.x, touchPoint.y, BoardModel::Black);
+        //            this->boardModel->setMarked(BoardModel::White);
+        //            break;
+        //        case TurnController::Turn::White:
+        //            pieceController->show(PieceController::PieceColor::White);
+        //            this->boardModel->setState(touchPoint.x, touchPoint.y, BoardModel::White);
+        //            this->boardModel->reverse(touchPoint.x, touchPoint.y, BoardModel::White);
+        //            this->boardModel->setMarked(BoardModel::Black);
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //    this->turnController->changeTurn();
+        //    this->startReverse();
+        //    this->showMarkers();
+        //}
+        std::vector<DelegateBase*>::iterator it;
+        for(it = this->listeners.begin(); it != this->listeners.end(); ++it)
         {
-            return false;
+            (**it)(touchPoint.x, touchPoint.y);
         }
             
-        this->boardModel->removeMarked();
-        if(pieceController->isShown)
-        {
-        }
-        else
-        {
-            switch(this->turnController->getCurrentTurn())
-            {
-                case TurnController::Turn::Black:
-                    pieceController->show(PieceController::PieceColor::Black);
-                    this->boardModel->setState(touchPoint.x, touchPoint.y, BoardModel::Black);
-                    this->boardModel->reverse(touchPoint.x, touchPoint.y, BoardModel::Black);
-                    this->boardModel->setMarked(BoardModel::White);
-                    break;
-                case TurnController::Turn::White:
-                    pieceController->show(PieceController::PieceColor::White);
-                    this->boardModel->setState(touchPoint.x, touchPoint.y, BoardModel::White);
-                    this->boardModel->reverse(touchPoint.x, touchPoint.y, BoardModel::White);
-                    this->boardModel->setMarked(BoardModel::Black);
-                    break;
-                default:
-                    break;
-            }
-            this->turnController->changeTurn();
-            this->startReverse();
-            this->showMarkers();
-        }
         
         return true;
     }
@@ -185,3 +191,9 @@ void BoardController::startReverse()
         }
     }
 }
+
+void BoardController::setOnClickHandler(DelegateBase *delegate)
+{
+    this->listeners.push_back(delegate);
+}
+
