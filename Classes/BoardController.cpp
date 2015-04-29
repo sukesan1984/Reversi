@@ -58,7 +58,7 @@ void BoardController::initialize()
             this->pieceControllersHolder->get(i, j)->show(currentState);
         }
     }
-    this->boardModel->setMarked(BoardModel::Black);
+    this->boardModel->setMarked(Color::Black);
     this->showMarkers();
 }
 
@@ -147,10 +147,10 @@ void BoardController::startReverse()
             switch(currentState)
             {
                 case BoardModel::State::White:
-                    this->pieceControllersHolder->get(i, j)->changeColor(PieceController::White);
+                    this->pieceControllersHolder->get(i, j)->changeColor(Color::White);
                     break;
                 case BoardModel::State::Black:
-                    this->pieceControllersHolder->get(i, j)->changeColor(PieceController::Black);
+                    this->pieceControllersHolder->get(i, j)->changeColor(Color::Black);
                     break;
                 default:
                     break;
@@ -182,16 +182,16 @@ bool BoardController::putPiece(int x, int y, Color color)
         switch(color)
         {
             case Color::Black:
-                pieceController->show(PieceController::PieceColor::Black);
-                this->boardModel->setState(x, y, BoardModel::Black);
-                this->boardModel->reverse(x, y, BoardModel::Black);
-                this->boardModel->setMarked(BoardModel::White);
+                pieceController->show(Color::Black);
+                this->boardModel->setState(x, y, Color::Black);
+                this->boardModel->reverse(x, y, Color::Black);
+                this->boardModel->setMarked(Color::White);
                 break;
             case Color::White:
-                pieceController->show(PieceController::PieceColor::White);
-                this->boardModel->setState(x, y, BoardModel::White);
-                this->boardModel->reverse(x, y, BoardModel::White);
-                this->boardModel->setMarked(BoardModel::Black);
+                pieceController->show(Color::White);
+                this->boardModel->setState(x, y, Color::White);
+                this->boardModel->reverse(x, y, Color::White);
+                this->boardModel->setMarked(Color::Black);
                 break;
             default:
                 break;

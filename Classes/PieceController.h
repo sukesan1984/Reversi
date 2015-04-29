@@ -12,28 +12,25 @@
 #include <stdio.h>
 #include "cocos2d.h"
 #include "BoardModel.h"
+#include "Const.h"
 
 class PieceController
 {
 public:
-    enum PieceColor {
-        Black = 1,
-        White = 2,
-    };
     PieceController();
-    PieceController(cocos2d::Sprite *blackSprite, cocos2d::Sprite *whiteSprite, PieceColor defaultColor, cocos2d::Vec2 defaultPosition);
+    PieceController(cocos2d::Sprite *blackSprite, cocos2d::Sprite *whiteSprite, Color defaultColor, cocos2d::Vec2 defaultPosition);
     ~PieceController();
     bool isShown = false;
     void changeColor();
-    void changeColor(PieceColor color);
+    void changeColor(Color color);
     void show();
-    void show(PieceColor color);
+    void show(Color color);
     void show(BoardModel::State state);
 private:
     cocos2d::Sprite *blackSprite;
     cocos2d::Sprite *whiteSprite;
     cocos2d::Sprite *currentSprite;
-    PieceColor currentColor;
+    Color currentColor;
     const float animationTime = 0.4f;
     bool isPlaying = false;
     cocos2d::Vec2 currentPosition;

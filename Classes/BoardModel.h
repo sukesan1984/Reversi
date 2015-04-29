@@ -25,18 +25,19 @@ public:
         White =   3,
         Marked =  4, //置ける位置にマークされた状態
     };
-    
     BoardModel();
     ~BoardModel();
+    
     State getState(int x, int y);
-    void setMarked(State state);
-    void setState(int x, int y, State state);
+    void setMarked(Color color);
+    void setState(int x, int y, Color color);
     void removeMarked();
     void changeColor(int x, int y);
-    void reverse(int x, int y, State state);
+    void reverse(int x, int y, Color color);
     bool isMarked(int x, int y);
     bool hasPuttablePlace(Color color);
 private:
+
     enum Direction{
         Left      = 1,
         LeftTop   = 2,
@@ -48,8 +49,13 @@ private:
         LeftDown  = 8,
     };
     State *boards;
+    void setMarked(State state);
+    void setState(int x, int y, State state);
     void setMarked(State state, int x, int y, Direction checkDirection);
+    void setMarked(Color color, int x, int y, Direction checkDirection);
+    void reverse(int x, int y, State state);
     bool reverse(State state,   int x, int y, Direction checkDirection);
+    bool reverse(Color color,   int x, int y, Direction checkDirection);
     bool isEqualState(State state, int x, int y);
 };
 

@@ -63,7 +63,7 @@ PieceController** BoardBuilder::createPieceControllers(cocos2d::Vec2 centerPos)
         pieceControllers[i] = new PieceController(
                                          blackSprite,
                                          whiteSprite,
-                                         PieceController::PieceColor::White,
+                                         Color::White,
                                                   cocos2d::Vec2(centerPos.x - this->boardSprite->getContentSize().width / 2 + width * x + width / 2,
                                                                 centerPos.y - this->boardSprite->getContentSize().height / 2 + height * y + height / 2));
         cocos2d::Sprite *markSprite = cocos2d::Sprite::createWithSpriteFrameName("candidate.png");

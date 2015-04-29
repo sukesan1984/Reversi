@@ -9,7 +9,7 @@
 #include "PieceController.h"
 
 PieceController::PieceController(){}
-PieceController::PieceController(cocos2d::Sprite *blackSprite, cocos2d::Sprite *whiteSprite, PieceColor defaultColor, cocos2d::Vec2 defaultPosition)
+PieceController::PieceController(cocos2d::Sprite *blackSprite, cocos2d::Sprite *whiteSprite, Color defaultColor, cocos2d::Vec2 defaultPosition)
 {
     this->blackSprite     = blackSprite;
     this->blackSprite->setOpacity(0);
@@ -20,10 +20,10 @@ PieceController::PieceController(cocos2d::Sprite *blackSprite, cocos2d::Sprite *
     this->setPosition(defaultPosition);
     switch(this->currentColor)
     {
-        case PieceColor::White:
+        case Color::White:
             this->blackSprite->setScale(0.0f, 1.0f);
             break;
-        case PieceColor::Black:
+        case Color::Black:
             this->whiteSprite->setScale(0.0f, 1.0f);
             break;
         default:
@@ -41,15 +41,15 @@ void PieceController::changeColor()
     cocos2d::Sprite *nextSprite;
     switch(this->currentColor)
     {
-        case PieceColor::White:
+        case Color::White:
             currentSprite = this->whiteSprite;
             nextSprite = this->blackSprite;
-            this->currentColor = PieceColor::Black;
+            this->currentColor = Color::Black;
             break;
-        case PieceColor::Black:
+        case Color::Black:
             currentSprite = this->blackSprite;
             nextSprite = this->whiteSprite;
-            this->currentColor = PieceColor::White;
+            this->currentColor = Color::White;
             break;
         default:
             break;
@@ -71,7 +71,7 @@ void PieceController::changeColor()
     this->isPlaying = !afterAction->isDone();
 }
 
-void PieceController::changeColor(PieceController::PieceColor color)
+void PieceController::changeColor(Color color)
 {
     if(this->currentColor == color) return;
     this->changeColor();
@@ -97,7 +97,7 @@ void PieceController::show()
     this->whiteSprite->runAction(sequence1);
 }
 
-void PieceController::show(PieceColor color)
+void PieceController::show(Color color)
 {
     if(this->currentColor == color)
     {
@@ -108,11 +108,11 @@ void PieceController::show(PieceColor color)
         this->currentColor    = color;
         switch(this->currentColor)
         {
-            case PieceColor::White:
+            case Color::White:
                 this->blackSprite->setScale(0.0f, 1.0f);
                 this->whiteSprite->setScale(1.0f, 1.0f);
                 break;
-            case PieceColor::Black:
+            case Color::Black:
                 this->whiteSprite->setScale(0.0f, 1.0f);
                 this->blackSprite->setScale(1.0f, 1.0f);
                 break;
@@ -130,10 +130,10 @@ void PieceController::show(BoardModel::State state)
         switch(state)
         {
             case BoardModel::State::Black:
-                this->show(PieceController::PieceColor::Black);
+                this->show(Color::Black);
                 break;
             case BoardModel::State::White:
-                this->show(PieceController::PieceColor::White);
+                this->show(Color::White);
                 break;
             default:
                 break;

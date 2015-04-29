@@ -38,6 +38,21 @@ void BoardModel::changeColor(int x, int y)
     }
 }
 
+void BoardModel::reverse(int x, int y, Color color)
+{
+    switch(color)
+    {
+        case Color::White:
+            this->reverse(x, y, State::White);
+            break;
+        case Color::Black:
+            this->reverse(x, y, State::Black);
+            break;
+        default:
+            break;
+    }
+}
+
 void BoardModel::reverse(int x, int y, BoardModel::State state)
 {
     if(state != State::Black && state != State::White) return;
@@ -140,10 +155,40 @@ bool BoardModel::reverse(BoardModel::State state, int x, int y, BoardModel::Dire
     return false;
 }
 
+void BoardModel::setState(int x, int y, Color color)
+{
+    switch(color)
+    {
+        case Color::White:
+            this->setState(x, y, State::White);
+            break;
+        case Color::Black:
+            this->setState(x, y, State::Black);
+            break;
+        default:
+            break;
+    }
+}
+
 void BoardModel::setState(int x, int y, BoardModel::State state)
 {
     int i = y * 8 + x;
     this->boards[i] = state;
+}
+
+void BoardModel::setMarked(Color color)
+{
+    switch(color)
+    {
+        case Color::White:
+            this->setMarked(State::White);
+            break;
+        case Color::Black:
+            this->setMarked(State::Black);
+            break;
+        default:
+            break;
+    }
 }
 
 void BoardModel::setMarked(State state)
