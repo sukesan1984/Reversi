@@ -178,21 +178,9 @@ bool BoardController::putPiece(int x, int y, Color color)
     }
     else
     {
-        switch(color)
-        {
-            case Color::Black:
-                pieceController->show(Color::Black);
-                this->boardModel->setState(x, y, Color::Black);
-                this->boardModel->reverse(x, y, Color::Black);
-                break;
-            case Color::White:
-                pieceController->show(Color::White);
-                this->boardModel->setState(x, y, Color::White);
-                this->boardModel->reverse(x, y, Color::White);
-                break;
-            default:
-                break;
-        }
+        pieceController->show(color);
+        this->boardModel->setState(x, y, color);
+        this->boardModel->reverse(x, y, color);
         this->startReverse();
     }
     return true;
