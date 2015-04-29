@@ -54,7 +54,7 @@ public:
                     //TurnController* turnController);
     ~BoardController();
     void setOnClickHandler(DelegateBase* delegate);
-    void putPiece(int x, int y, Color color);
+    bool putPiece(int x, int y, Color color);
 };
 
 #endif /* defined(__Reversi__BoardController__) */

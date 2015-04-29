@@ -50,18 +50,22 @@ void TurnController::changeTurn()
 void TurnController::onSelectCell(int x, int y)
 {
     cocos2d::log("%d のターン: %d, %d", this->currentTurn, x, y);
+    bool canPut;
     switch(this->currentTurn)
     {
         case Turn::Black:
-            this->boardController->putPiece(x, y, Color::Black);
+            canPut = this->boardController->putPiece(x, y, Color::Black);
             break;
         case Turn::White:
-            this->boardController->putPiece(x, y, Color::White);
+            canPut = this->boardController->putPiece(x, y, Color::White);
             break;
         default:
             break;
     }
-    this->setPhase(TurnEnd);
+    if(canPut)
+    {
+        this->setPhase(TurnEnd);
+    }
 }
 
 void TurnController::update()

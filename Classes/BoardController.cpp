@@ -164,17 +164,18 @@ void BoardController::setOnClickHandler(DelegateBase *delegate)
     this->listeners.push_back(delegate);
 }
 
-void BoardController::putPiece(int x, int y, Color color)
+bool BoardController::putPiece(int x, int y, Color color)
 {
     PieceController *pieceController = this->pieceControllersHolder->get(x, y);
     if(!this->boardModel->isMarked(x, y))
     {
-        return;
+        return false;
     }
         
     this->boardModel->removeMarked();
     if(pieceController->isShown)
     {
+        return false;
     }
     else
     {
@@ -198,4 +199,5 @@ void BoardController::putPiece(int x, int y, Color color)
         this->startReverse();
         this->showMarkers();
     }
+    return true;
 }
