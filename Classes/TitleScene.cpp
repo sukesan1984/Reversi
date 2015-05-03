@@ -7,6 +7,7 @@
 //
 
 #include "TitleScene.h"
+#include "GameMainScene.h"
 
 USING_NS_CC;
 
@@ -52,5 +53,25 @@ bool TitleScene::init()
     // add the backgroundSprite as a child to this layer
     this->addChild(backgroundSprite, 0);
     
+    MenuItemFont* toPvpFont = MenuItemFont::create("対人戦", CC_CALLBACK_1(TitleScene::toPvp, this));
+    Size s = Director::getInstance()->getVisibleSize();
+    
+    Menu* pMenu = Menu::create(toPvpFont, NULL);
+    
+    pMenu->setPosition(Vec2(s.width * .5, s.height * .5));
+    
+    this->addChild(pMenu);
+    
     return true;
+}
+
+void TitleScene::toPvp(Ref* pSender)
+{
+    log("toPvp");
+    
+    auto *scene = GameMain::createScene();
+    
+    TransitionCrossFade* crossFade = TransitionCrossFade::create(0.5f, scene);
+    
+    Director::getInstance()->replaceScene(crossFade);
 }

@@ -1,5 +1,5 @@
 #include "GameMainScene.h"
-
+#include "TitleScene.h"
 USING_NS_CC;
 
 Scene* GameMain::createScene()
@@ -81,18 +81,8 @@ bool GameMain::init()
     
     // create TurnController;
     this->turnController = new TurnController(playerBlack, playerWhite, this->boardController);
-    
+   
     this->schedule(schedule_selector(GameMain::update));
-    
-    // create score background
-    //const int scoreBoardMarginX = 10;
-    //Sprite *scoreBoardBlack = Sprite::createWithSpriteFrameName("score_background.png");
-    //scoreBoardBlack->setPosition(Vec2(visibleSize.width/2 + origin.x - scoreBoardBlack->getContentSize().width / 2 - scoreBoardMarginX / 2, visibleSize.height/2 + origin.y - offsetY + boardSprite->getContentSize().height / 2 + 10 + scoreBoardBlack->getContentSize().height / 2));
-    //this->addChild(scoreBoardBlack, 3);
-    //
-    //Sprite *scoreBoardWhite = Sprite::createWithSpriteFrameName("score_background.png");
-    //scoreBoardWhite->setPosition(Vec2(visibleSize.width/2 + origin.x + scoreBoardWhite->getContentSize().width / 2 + scoreBoardMarginX / 2, visibleSize.height/2 + origin.y - offsetY + boardSprite->getContentSize().height / 2 + 10 + scoreBoardWhite->getContentSize().height / 2));
-    //this->addChild(scoreBoardWhite, 3);
     
     return true;
 }
@@ -121,6 +111,12 @@ void GameMain::menuCloseCallback(Ref* pSender)
 void GameMain::onClickHomeButton(cocos2d::Ref *pSender)
 {
     log("home button 押された");
+    
+    auto *scene = TitleScene::createScene();
+    
+    TransitionCrossFade* crossFade = TransitionCrossFade::create(0.5f, scene);
+    
+    Director::getInstance()->replaceScene(crossFade);
 }
 
 void GameMain::onClickSettingButton(cocos2d::Ref *pSender)
