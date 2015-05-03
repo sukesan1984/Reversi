@@ -12,9 +12,10 @@
 #include <stdio.h>
 #include "Const.h"
 #include <vector>
+#include "IPlayer.h"
 #include "DelegateBase.h"
 
-class Player
+class Player : public IPlayer
 {
     Color playerColor;
     bool isMyTurn = false;

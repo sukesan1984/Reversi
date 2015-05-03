@@ -129,6 +129,7 @@
 		250730C71AF0ACA100D64BCE /* TouchDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchDelegate.h; sourceTree = "<group>"; };
 		251B16851AF605440007109D /* TitleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TitleScene.cpp; sourceTree = "<group>"; };
 		251B16861AF605440007109D /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
+		251B16891AF62DB50007109D /* IPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPlayer.h; sourceTree = "<group>"; };
 		254CBF851AE3A10C003A33C2 /* PhaseController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhaseController.cpp; sourceTree = "<group>"; };
 		254CBF861AE3A10C003A33C2 /* PhaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhaseController.h; sourceTree = "<group>"; };
 		254CBF881AE3B18C003A33C2 /* MarkController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MarkController.cpp; sourceTree = "<group>"; };
@@ -398,6 +399,7 @@
 				250730C11AF0792300D64BCE /* Const.h */,
 				250730C51AF0AC3C00D64BCE /* DelegateBase.h */,
 				250730C71AF0ACA100D64BCE /* TouchDelegate.h */,
+				251B16891AF62DB50007109D /* IPlayer.h */,
 			);
 			name = Classes;
 			path = ../Classes;
