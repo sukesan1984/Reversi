@@ -10,6 +10,7 @@
 #define __Reversi__BoardModel__
 
 #include <stdio.h>
+#include <vector>
 #include "Const.h"
 
 /////////////////////////////////
@@ -30,6 +31,7 @@ public:
     
     State getState(int x, int y);
     void setMarked(Color color);
+    std::vector<Point> getMarked();
     void setState(int x, int y, Color color);
     void removeMarked();
     void changeColor(int x, int y);

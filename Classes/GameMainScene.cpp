@@ -79,6 +79,8 @@ bool GameMain::init()
     Player* playerWhite = new Player(Color::White);
     this->boardController->setOnClickHandler(TouchDelegate<Player>::createDelegator(playerWhite, &Player::onCellClick));
     
+    
+    
     // create TurnController;
     this->turnController = new TurnController(playerBlack, playerWhite, this->boardController);
    

@@ -14,4 +14,10 @@ enum Color{
     White = 2,
 };
 
+struct Point {
+    int x;
+    int y;
+};
+
+
 #endif

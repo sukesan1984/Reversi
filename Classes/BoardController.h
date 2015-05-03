@@ -18,12 +18,6 @@
 #include "Const.h"
 
 #include <vector>
-
-struct Point {
-    int x;
-    int y;
-};
-
 class BoardController
 {
 private:

@@ -9,7 +9,6 @@
 #ifndef Reversi_IPlayer_h
 #define Reversi_IPlayer_h
 
-#include "Const.h"//;
 #include "DelegateBase.h"//;
 
 ///Playerクラスのinterface

@@ -176,6 +176,23 @@ void BoardModel::setState(int x, int y, BoardModel::State state)
     this->boards[i] = state;
 }
 
+std::vector<Point> BoardModel::getMarked()
+{
+    std::vector<Point> marked;
+    for(int i = 0; i < 8 * 8; i++)
+    {
+        if(this->boards[i] == State::Marked)
+        {
+            Point point;
+            point.x = i % 8;
+            point.y = i / 8;
+            
+            marked.push_back(point);
+        }
+    }
+    return marked;
+}
+
 void BoardModel::setMarked(Color color)
 {
     switch(color)
