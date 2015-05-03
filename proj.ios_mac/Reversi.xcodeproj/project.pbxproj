@@ -12,6 +12,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		250730C01AF078C100D64BCE /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 250730BE1AF078C100D64BCE /* Player.cpp */; };
+		251B16871AF605440007109D /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B16851AF605440007109D /* TitleScene.cpp */; };
 		254CBF871AE3A10D003A33C2 /* PhaseController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 254CBF851AE3A10C003A33C2 /* PhaseController.cpp */; };
 		254CBF8A1AE3B18C003A33C2 /* MarkController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 254CBF881AE3B18C003A33C2 /* MarkController.cpp */; };
 		2561686F1AE2507800C983C5 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 2561686E1AE2507800C983C5 /* sample.png */; };
@@ -126,6 +127,8 @@
 		250730C11AF0792300D64BCE /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		250730C51AF0AC3C00D64BCE /* DelegateBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DelegateBase.h; sourceTree = "<group>"; };
 		250730C71AF0ACA100D64BCE /* TouchDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchDelegate.h; sourceTree = "<group>"; };
+		251B16851AF605440007109D /* TitleScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TitleScene.cpp; sourceTree = "<group>"; };
+		251B16861AF605440007109D /* TitleScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleScene.h; sourceTree = "<group>"; };
 		254CBF851AE3A10C003A33C2 /* PhaseController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhaseController.cpp; sourceTree = "<group>"; };
 		254CBF861AE3A10C003A33C2 /* PhaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhaseController.h; sourceTree = "<group>"; };
 		254CBF881AE3B18C003A33C2 /* MarkController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MarkController.cpp; sourceTree = "<group>"; };
@@ -293,6 +296,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		251B16881AF605540007109D /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				251B16851AF605440007109D /* TitleScene.cpp */,
+				251B16861AF605440007109D /* TitleScene.h */,
+				46880B8619C43A87006E1F66 /* GameMainScene.cpp */,
+				46880B8719C43A87006E1F66 /* GameMainScene.h */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -360,10 +374,9 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				251B16881AF605540007109D /* Scene */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
-				46880B8619C43A87006E1F66 /* GameMainScene.cpp */,
-				46880B8719C43A87006E1F66 /* GameMainScene.h */,
 				25CD2EE61AE2971C00869579 /* BoardController.cpp */,
 				25CD2EE71AE2971C00869579 /* BoardController.h */,
 				25CD2EE91AE2A72100869579 /* PieceController.cpp */,
@@ -588,6 +601,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				25CD2EE81AE2971C00869579 /* BoardController.cpp in Sources */,
+				251B16871AF605440007109D /* TitleScene.cpp in Sources */,
 				250730C01AF078C100D64BCE /* Player.cpp in Sources */,
 				25CD2EF41AE3721C00869579 /* BoardModel.cpp in Sources */,
 				25CD2EF11AE3588800869579 /* BoardBuilder.cpp in Sources */,
