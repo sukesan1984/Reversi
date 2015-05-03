@@ -5,7 +5,9 @@
 #include "BoardBuilder.h"
 #include "BoardController.h"
 #include "TurnController.h"
+#include "IPlayer.h"
 #include "Player.h"
+#include "SelectRandomPlayer.h"
 #include "Const.h"
 #include "TouchDelegate.h"
 
@@ -13,6 +15,7 @@ class GameMain : public cocos2d::Layer
 {
 private:
     BoardController* boardController;
+    BoardModel* boardModel;
     BoardBuilder* boardBuilder;
     TurnController* turnController;
     void update(float frame);

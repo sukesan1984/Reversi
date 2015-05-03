@@ -18,6 +18,7 @@ class IPlayer
 public:
     virtual ~IPlayer(){};
     virtual void setOnSelectHandler(DelegateBase* delegate) = 0;
+    virtual void setTurn(bool isMyTurn) = 0;
 };
 
 #endif

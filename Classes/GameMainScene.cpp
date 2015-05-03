@@ -72,13 +72,17 @@ bool GameMain::init()
     // create board
     const int offsetY = 40;
     this->boardBuilder = new BoardBuilder(this, _eventDispatcher);
-    this->boardController = this->boardBuilder->create(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - offsetY));
+    this->boardModel   = new BoardModel();
     
-    Player* playerBlack = new Player(Color::Black);
+    this->boardController = this->boardBuilder->create(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y - offsetY), this->boardModel);
+    
+    Player* playerBlack =  new Player(Color::Black);
     this->boardController->setOnClickHandler(TouchDelegate<Player>::createDelegator(playerBlack, &Player::onCellClick));
-    Player* playerWhite = new Player(Color::White);
-    this->boardController->setOnClickHandler(TouchDelegate<Player>::createDelegator(playerWhite, &Player::onCellClick));
+    //Player* playerWhite =  new Player(Color::White);
+    //this->boardController->setOnClickHandler(TouchDelegate<Player>::createDelegator(playerWhite, &Player::onCellClick));
     
+    SelectRandomPlayer* playerWhite =  new SelectRandomPlayer(Color::White, this->boardModel);
+    //this->boardController->setOnClickHandler(TouchDelegate<Player>::createDelegator(playerWhite, &Player::onCellClick));
     
     
     // create TurnController;

@@ -16,7 +16,7 @@ BoardBuilder::BoardBuilder(cocos2d::Layer *parentLayer, cocos2d::EventDispatcher
 }
 BoardBuilder::~BoardBuilder(){}
 
-BoardController* BoardBuilder::create(cocos2d::Vec2 centerPos)
+BoardController* BoardBuilder::create(cocos2d::Vec2 centerPos, BoardModel* boardModel)
 {
     
     /// boardのview生成
@@ -29,7 +29,7 @@ BoardController* BoardBuilder::create(cocos2d::Vec2 centerPos)
     this->pieceControllersHolder = new PieceControllersHolder(pieceControllers);
     
     
-    this->boardModel = new BoardModel();
+    this->boardModel = boardModel;
     
     /// BoardControllerの生成
     this->boardController = new BoardController(boardSprite,

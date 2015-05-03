@@ -41,6 +41,6 @@ public:
     ~BoardBuilder();
     
     ///中心座標を与えてその位置を中心に生成する。
-    BoardController* create(cocos2d::Vec2 centerPos);
+    BoardController* create(cocos2d::Vec2 centerPos, BoardModel* boardModel);
 };
 #endif /* defined(__Reversi__BoardBuilder__) */

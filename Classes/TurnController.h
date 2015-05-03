@@ -10,7 +10,7 @@
 #define __Reversi__TurnController__
 
 #include <stdio.h>
-#include "Player.h"
+#include "IPlayer.h"
 #include "TouchDelegate.h"
 #include "BoardController.h"
 
@@ -27,9 +27,10 @@ public:
         TurnEnd = 4, ///終了
     };
     
-    TurnController(Player* playerBlack, Player* playerWhite, BoardController* boardController);
+    TurnController(IPlayer* playerBlack, IPlayer* playerWhite, BoardController* boardController);
     ~TurnController();
     
+    void setTurn();
     void changeTurn();
     Color getCurrentTurn();
     ///PlayerがCellを選択したときに呼ばれる。
@@ -37,8 +38,8 @@ public:
     void update();
 private:
     Color currentTurn;
-    Player* playerBlack;
-    Player* playerWhite;
+    IPlayer* playerBlack;
+    IPlayer* playerWhite;
     
     BoardController *boardController;
     

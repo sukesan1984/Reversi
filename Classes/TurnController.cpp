@@ -8,7 +8,7 @@
 
 #include "TurnController.h"
 
-TurnController::TurnController(Player* playerBlack, Player* playerWhite, BoardController* boardController)
+TurnController::TurnController(IPlayer* playerBlack, IPlayer* playerWhite, BoardController* boardController)
 {
     this->currentTurn = Color::Black;
     this->playerBlack = playerBlack;
@@ -27,6 +27,21 @@ Color TurnController::getCurrentTurn()
     return this->currentTurn;
 }
 
+void TurnController::setTurn()
+{
+    switch(this->currentTurn)
+    {
+        case Color::Black:
+            this->playerBlack->setTurn(true);
+            break;
+        case Color::White:
+            this->playerWhite->setTurn(true);
+            break;
+        default:
+            break;
+    }
+}
+
 void TurnController::changeTurn()
 {
     switch(this->currentTurn)
@@ -34,12 +49,10 @@ void TurnController::changeTurn()
         case Color::Black:
             this->currentTurn = Color::White;
             this->playerBlack->setTurn(false);
-            this->playerWhite->setTurn(true);
             break;
         case Color::White:
             this->currentTurn = Color::Black;
             this->playerWhite->setTurn(false);
-            this->playerBlack->setTurn(true);
             break;
         default:
             break;
@@ -91,6 +104,7 @@ void TurnController::update()
             }
             break;
         case Put:
+            this->setTurn();
             return;
             break;
         case Reverse:
