@@ -33,9 +33,12 @@ PieceController::PieceController(cocos2d::Sprite *blackSprite, cocos2d::Sprite *
 
 PieceController::~PieceController(){}
 
-void PieceController::changeColor()
+void PieceController::changeColor(cocos2d::CallFunc* callback)
 {
-    if(this->isPlaying) return;
+    if(this->isPlaying){
+        callback->execute();
+        return;
+    }
     
     cocos2d::Sprite *currentSprite;
     cocos2d::Sprite *nextSprite;
@@ -61,20 +64,23 @@ void PieceController::changeColor()
     
     this->isPlaying = true;
     currentSprite->runAction(actionToZero);
-    cocos2d::CallFunc *callback = cocos2d::CallFunc::create([this](){
+    cocos2d::CallFunc *callback0 = cocos2d::CallFunc::create([this](){
         this->isPlaying = false;
     });
 
-    cocos2d::Sequence* waitToZero = cocos2d::Sequence::create(actionDelay, actionToOne, callback, NULL);
+    cocos2d::Sequence* waitToZero = cocos2d::Sequence::create(actionDelay, actionToOne, callback0, callback, NULL);
     
     cocos2d::Action *afterAction  = nextSprite->runAction(waitToZero);
     this->isPlaying = !afterAction->isDone();
 }
 
-void PieceController::changeColor(Color color)
+void PieceController::changeColor(Color color, cocos2d::CallFunc *callback)
 {
-    if(this->currentColor == color) return;
-    this->changeColor();
+    if(this->currentColor == color) {
+        callback->execute();
+        return;
+    }
+    this->changeColor(callback);
 }
 
 void PieceController::show()

@@ -90,6 +90,8 @@ void TurnController::update()
     switch(this->currentPhase)
     {
         case SetMark:
+            if(this->boardController->isPlaying())
+                return;
             this->boardController->setMark(this->currentTurn);
             this->setPhase(SearchPuttable);
             break;

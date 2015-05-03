@@ -139,6 +139,7 @@ void BoardController::showMarkers()
 
 void BoardController::startReverse()
 {
+    this->count = 0;
     for(int i = 0; i < 8; i++)
     {
         for(int j = 0; j < 8; j++)
@@ -147,10 +148,16 @@ void BoardController::startReverse()
             switch(currentState)
             {
                 case BoardModel::State::White:
-                    this->pieceControllersHolder->get(i, j)->changeColor(Color::White);
+                    this->count++;
+                    this->pieceControllersHolder->get(i, j)->changeColor(Color::White, cocos2d::CallFunc::create([this](){
+                        this->count--;
+                    }));
                     break;
                 case BoardModel::State::Black:
-                    this->pieceControllersHolder->get(i, j)->changeColor(Color::Black);
+                    count++;
+                    this->pieceControllersHolder->get(i, j)->changeColor(Color::Black, cocos2d::CallFunc::create([this]() {
+                        this->count--;
+                    }));
                     break;
                 default:
                     break;
@@ -202,4 +209,9 @@ void BoardController::removeMark()
 bool BoardController::hasPuttablePlace()
 {
     return this->boardModel->hasPuttablePlace();
+}
+
+bool BoardController::isPlaying()
+{
+    return this->count > 0;
 }

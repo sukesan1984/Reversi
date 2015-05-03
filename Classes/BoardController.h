@@ -38,6 +38,7 @@ private:
     Point getIndex(cocos2d::Vec2 locationInNode);
     void showMarkers();
     void startReverse();
+    int count = 0;
 public:
     BoardController();
     BoardController(cocos2d::Sprite* boardSprite,
@@ -53,6 +54,8 @@ public:
     void removeMark();
     /// 置ける位置があるかどうかを返す
     bool hasPuttablePlace();
+    
+    bool isPlaying();
 };
 
 #endif /* defined(__Reversi__BoardController__) */
