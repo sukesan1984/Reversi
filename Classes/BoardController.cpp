@@ -196,6 +196,7 @@ void BoardController::removeMark()
 {
     this->boardModel->removeMarked();
     this->showMarkers();
+    this->boardModel->showNum();
 }
 
 bool BoardController::hasPuttablePlace()

@@ -12,6 +12,7 @@
 enum Color{
     Black = 1,
     White = 2,
+    None  = 3,
 };
 
 struct Point {

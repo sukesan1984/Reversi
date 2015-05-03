@@ -16,10 +16,10 @@ BoardModel::BoardModel()
     {
         this->boards[i] = State::None;
     };
-    this->setState(3,3,State::Black);
-    this->setState(3,4,State::White);
-    this->setState(4,3,State::White);
-    this->setState(4,4,State::Black);
+    this->setState(3,3,Color::Black);
+    this->setState(3,4,Color::White);
+    this->setState(4,3,Color::White);
+    this->setState(4,4,Color::Black);
 }
 
 void BoardModel::changeColor(int x, int y)
@@ -28,10 +28,10 @@ void BoardModel::changeColor(int x, int y)
     switch(currentState)
     {
         case State::Black:
-            this->setState(x, y, State::White);
+            this->setState(x, y, Color::White);
             break;
         case State::White:
-            this->setState(x, y, State::Black);
+            this->setState(x, y, Color::Black);
             break;
         default:
             break;
@@ -173,6 +173,38 @@ void BoardModel::setState(int x, int y, Color color)
 void BoardModel::setState(int x, int y, BoardModel::State state)
 {
     int i = y * 8 + x;
+    
+    State currentState = this->getState(x, y);
+    Color color = state == State::Black ? Color::Black :
+                  state == State::White ? Color::White :
+                           Color::None;
+    switch(currentState)
+    {
+        case State::None:
+        case State::Marked:
+            this->increaseNum(color);
+            break;
+        case State::Black:
+            if(color == Color::Black)
+            {
+                return;
+            }
+            this->increaseNum(Color::White);
+            this->decreaseNum(Color::Black);
+            
+            break;
+        case State::White:
+            if(color == Color::White)
+            {
+                return;
+            }
+            this->increaseNum(Color::Black);
+            this->decreaseNum(Color::White);
+            
+            break;
+        default:
+            break;
+    }
     this->boards[i] = state;
 }
 
@@ -191,6 +223,12 @@ std::vector<Point> BoardModel::getMarked()
         }
     }
     return marked;
+}
+
+void BoardModel::showNum()
+{
+    cocos2d::log("black: %d", this->blackNum);
+    cocos2d::log("white: %d", this->whiteNum);
 }
 
 void BoardModel::setMarked(Color color)
@@ -337,3 +375,29 @@ bool BoardModel::hasPuttablePlace()
     }
     return markedPlace > 0;
 }
+
+void BoardModel::increaseNum(Color color)
+{
+    this->changeNum(color, 1);
+}
+
+void BoardModel::decreaseNum(Color color)
+{
+    this->changeNum(color, -1);
+}
+
+void BoardModel::changeNum(Color color, int num)
+{
+    switch(color)
+    {
+        case Color::White:
+            this->whiteNum += num;
+            break;
+        case Color::Black:
+            this->blackNum += num;
+            break;
+        default:
+            break;
+    }
+}
+

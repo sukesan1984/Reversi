@@ -38,6 +38,7 @@ public:
     void reverse(int x, int y, Color color);
     bool isMarked(int x, int y);
     bool hasPuttablePlace();
+    void showNum();
 private:
 
     enum Direction{
@@ -59,6 +60,13 @@ private:
     bool reverse(State state,   int x, int y, Direction checkDirection);
     bool reverse(Color color,   int x, int y, Direction checkDirection);
     bool isEqualState(State state, int x, int y);
+    
+    void increaseNum(Color color);
+    void decreaseNum(Color color);
+    void changeNum(Color color, int num);
+    
+    int whiteNum = 0;
+    int blackNum = 0;
 };
 
 #endif /* defined(__Reversi__BoardModel__) */
