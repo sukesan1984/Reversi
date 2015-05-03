@@ -9,7 +9,7 @@
 #ifndef Reversi_Const_h
 #define Reversi_Const_h
 
-const enum Color{
+enum Color{
     Black = 1,
     White = 2,
 };

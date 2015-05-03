@@ -29,6 +29,7 @@
 #import "RootViewController.h"
 
 @implementation AppController
+@synthesize window;
 
 #pragma mark -
 #pragma mark Application lifecycle
