@@ -10,20 +10,24 @@
 #define __Reversi__ScoreBoardController__
 
 #include <stdio.h>
-#include "BoardModel.h"
 #include "cocos2d.h"
+#include "BoardModel.h"
+#include "Const.h"
 
 USING_NS_CC;
 
 class ScoreBoardController
 {
 private:
-    Sprite* scoreBoardBackground;
-    Sprite* pieceSprite;
+    Label* scoreLabel;
+    BoardModel* boardModel;
+    Color color;
     
 public:
-    ScoreBoardController();
+    ScoreBoardController(Label* scoreLabel, BoardModel* boardModel, Color color);
     ~ScoreBoardController();
+    
+    void updateLabel();
 };
 
 

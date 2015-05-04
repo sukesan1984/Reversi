@@ -98,6 +98,7 @@ bool GameMain::init()
     labelBlack->setColor(Color3B(0x20,0x22,0x23));
     scoreBoardBlack->addChild(labelBlack);
     
+    this->scoreBoardControllerBlack = new ScoreBoardController(labelBlack, this->boardModel, Color::Black);
 
     this->addChild(scoreBoardBlack, 3);
     
@@ -114,6 +115,8 @@ bool GameMain::init()
     labelWhite->setColor(Color3B(0xf8,0xf8,0xf8));
     scoreBoardWhite->addChild(labelWhite);
     
+    this->scoreBoardControllerWhite = new ScoreBoardController(labelWhite, this->boardModel, Color::White);
+    
     // create TurnController;
     this->turnController = new TurnController(playerBlack, playerWhite, this->boardController);
    
@@ -126,6 +129,8 @@ bool GameMain::init()
 void GameMain::update(float frame)
 {
     this->turnController->update();
+    this->scoreBoardControllerBlack->updateLabel();
+    this->scoreBoardControllerWhite->updateLabel();
 }
 
 

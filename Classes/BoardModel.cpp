@@ -231,6 +231,22 @@ void BoardModel::showNum()
     cocos2d::log("white: %d", this->whiteNum);
 }
 
+int BoardModel::getNum(Color color)
+{
+    switch(color)
+    {
+        case Color::Black:
+            return this->blackNum;
+            break;
+        case Color::White:
+            return this->whiteNum;
+            break;
+        default:
+            return 0;
+            break;
+    }
+}
+
 void BoardModel::setMarked(Color color)
 {
     switch(color)

@@ -39,6 +39,8 @@ public:
     bool isMarked(int x, int y);
     bool hasPuttablePlace();
     void showNum();
+    
+    int getNum(Color color);
 private:
 
     enum Direction{

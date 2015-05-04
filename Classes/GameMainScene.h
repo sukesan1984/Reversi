@@ -10,6 +10,7 @@
 #include "SelectRandomPlayer.h"
 #include "Const.h"
 #include "TouchDelegate.h"
+#include "ScoreBoardController.h"
 
 class GameMain : public cocos2d::Layer
 {
@@ -19,6 +20,8 @@ private:
     BoardBuilder* boardBuilder;
     TurnController* turnController;
     void update(float frame);
+    ScoreBoardController* scoreBoardControllerBlack;
+    ScoreBoardController* scoreBoardControllerWhite;
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
