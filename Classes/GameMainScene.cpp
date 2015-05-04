@@ -84,6 +84,35 @@ bool GameMain::init()
     SelectRandomPlayer* playerWhite =  new SelectRandomPlayer(Color::White, this->boardModel);
     //this->boardController->setOnClickHandler(TouchDelegate<Player>::createDelegator(playerWhite, &Player::onCellClick));
     
+    //create score background
+    const int scoreBoardMarginX = 10;
+    Sprite *scoreBoardBlack = Sprite::createWithSpriteFrameName("score_background.png");
+    scoreBoardBlack->setPosition(Vec2(visibleSize.width/2 + origin.x - scoreBoardBlack->getContentSize().width / 2 - scoreBoardMarginX / 2, visibleSize.height + origin.y - settingItem->getContentSize().height - 20 - 20 - 20));
+    
+    Sprite* pieceBlack      = Sprite::createWithSpriteFrameName("black.png");
+    pieceBlack->setPosition(Vec2(pieceBlack->getContentSize().width / 2 + 10, scoreBoardBlack->getContentSize().height / 2));
+    scoreBoardBlack->addChild(pieceBlack);
+    
+    Label* labelBlack       = Label::createWithSystemFont("0", "Arial", 20);
+    labelBlack->setPosition(Vec2(scoreBoardBlack->getContentSize().width - labelBlack->getContentSize().width / 2 - 10, scoreBoardBlack->getContentSize().height / 2));
+    labelBlack->setColor(Color3B(0x20,0x22,0x23));
+    scoreBoardBlack->addChild(labelBlack);
+    
+
+    this->addChild(scoreBoardBlack, 3);
+    
+    Sprite *scoreBoardWhite = Sprite::createWithSpriteFrameName("score_background.png");
+    scoreBoardWhite->setPosition(Vec2(visibleSize.width/2 + origin.x + scoreBoardWhite->getContentSize().width / 2 + scoreBoardMarginX / 2, visibleSize.height + origin.y - settingItem->getContentSize().height - 20 - 20 - 20));
+    this->addChild(scoreBoardWhite, 3);
+    
+    Sprite* pieceWhite      = Sprite::createWithSpriteFrameName("white.png");
+    pieceWhite->setPosition(Vec2(pieceWhite->getContentSize().width / 2 + 10, scoreBoardWhite->getContentSize().height / 2));
+    scoreBoardWhite->addChild(pieceWhite);
+
+    Label* labelWhite       = Label::createWithSystemFont("0", "Arial", 20);
+    labelWhite->setPosition(Vec2(scoreBoardWhite->getContentSize().width - labelWhite->getContentSize().width / 2 - 10, scoreBoardWhite->getContentSize().height / 2));
+    labelWhite->setColor(Color3B(0xf8,0xf8,0xf8));
+    scoreBoardWhite->addChild(labelWhite);
     
     // create TurnController;
     this->turnController = new TurnController(playerBlack, playerWhite, this->boardController);
