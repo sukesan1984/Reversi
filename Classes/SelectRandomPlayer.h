@@ -11,22 +11,14 @@
 
 #include <stdio.h>
 #include "Const.h"
-#include "IPlayer.h"
 #include "BoardModel.h"
+#include "NPCBase.h"
 
-class SelectRandomPlayer : public IPlayer
+class SelectRandomPlayer : public NPCBase
 {
-private:
-    Color playerColor;
-    BoardModel* boardModel;
-    bool isMyTurn;
-    std::vector<DelegateBase*> listeners;
 public:
     SelectRandomPlayer(Color playerColor, BoardModel* boardModel);
-    ~SelectRandomPlayer();
-
     void setTurn(bool isMyTurn);
-    void setOnSelectHandler(DelegateBase* delegate);
 };
 
 #endif /* defined(__Reversi__SelectRandomPlayer__) */

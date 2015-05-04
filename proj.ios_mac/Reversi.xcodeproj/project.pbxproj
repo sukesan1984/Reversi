@@ -16,6 +16,8 @@
 		251B168C1AF6323A0007109D /* SelectRandomPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B168A1AF6323A0007109D /* SelectRandomPlayer.cpp */; };
 		251B16911AF6F3830007109D /* ScoreBoardBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B168F1AF6F3830007109D /* ScoreBoardBuilder.cpp */; };
 		251B16941AF6F3E60007109D /* ScoreBoardController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B16921AF6F3E60007109D /* ScoreBoardController.cpp */; };
+		251B16971AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B16951AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.cpp */; };
+		251B169A1AF6FE830007109D /* NPCBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B16981AF6FE830007109D /* NPCBase.cpp */; };
 		254CBF871AE3A10D003A33C2 /* PhaseController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 254CBF851AE3A10C003A33C2 /* PhaseController.cpp */; };
 		254CBF8A1AE3B18C003A33C2 /* MarkController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 254CBF881AE3B18C003A33C2 /* MarkController.cpp */; };
 		2561686F1AE2507800C983C5 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 2561686E1AE2507800C983C5 /* sample.png */; };
@@ -139,6 +141,10 @@
 		251B16901AF6F3830007109D /* ScoreBoardBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreBoardBuilder.h; sourceTree = "<group>"; };
 		251B16921AF6F3E60007109D /* ScoreBoardController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScoreBoardController.cpp; sourceTree = "<group>"; };
 		251B16931AF6F3E60007109D /* ScoreBoardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreBoardController.h; sourceTree = "<group>"; };
+		251B16951AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SelectMakeOponentFewPlacesPlayer.cpp; sourceTree = "<group>"; };
+		251B16961AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectMakeOponentFewPlacesPlayer.h; sourceTree = "<group>"; };
+		251B16981AF6FE830007109D /* NPCBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPCBase.cpp; sourceTree = "<group>"; };
+		251B16991AF6FE830007109D /* NPCBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPCBase.h; sourceTree = "<group>"; };
 		254CBF851AE3A10C003A33C2 /* PhaseController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhaseController.cpp; sourceTree = "<group>"; };
 		254CBF861AE3A10C003A33C2 /* PhaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhaseController.h; sourceTree = "<group>"; };
 		254CBF881AE3B18C003A33C2 /* MarkController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MarkController.cpp; sourceTree = "<group>"; };
@@ -325,6 +331,10 @@
 				251B168B1AF6323A0007109D /* SelectRandomPlayer.h */,
 				250730BE1AF078C100D64BCE /* Player.cpp */,
 				250730BF1AF078C100D64BCE /* Player.h */,
+				251B16951AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.cpp */,
+				251B16961AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.h */,
+				251B16981AF6FE830007109D /* NPCBase.cpp */,
+				251B16991AF6FE830007109D /* NPCBase.h */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -623,8 +633,10 @@
 				25CD2EEB1AE2A72100869579 /* PieceController.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameMainScene.cpp in Sources */,
+				251B16971AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.cpp in Sources */,
 				251B168C1AF6323A0007109D /* SelectRandomPlayer.cpp in Sources */,
 				251B16911AF6F3830007109D /* ScoreBoardBuilder.cpp in Sources */,
+				251B169A1AF6FE830007109D /* NPCBase.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				25CD2EE81AE2971C00869579 /* BoardController.cpp in Sources */,
