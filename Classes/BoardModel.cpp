@@ -22,6 +22,15 @@ BoardModel::BoardModel()
     this->setState(4,4,Color::Black);
 }
 
+BoardModel::BoardModel(State *boards)
+{
+    this->boards = new State[8 * 8];
+    for(int i = 0; i < 8 * 8; i++)
+    {
+        this->boards[i] = boards[i];
+    }
+}
+
 void BoardModel::changeColor(int x, int y)
 {
     State currentState = this->getState(x, y);
@@ -247,6 +256,23 @@ int BoardModel::getNum(Color color)
     }
 }
 
+int BoardModel::getNextPuttableNum(int x, int y, Color color)
+{
+    BoardModel *copied = this->getCopied();
+    
+    copied->setState(x, y, color);
+    copied->reverse(x, y, color);
+    
+    Color nextColor = color == Color::Black ? Color::White :
+                    color == Color::White ? Color::Black :
+                    Color::None;
+    copied->setMarked(nextColor);
+    int count =  (int) copied->getMarked().size();
+    
+    return count;
+}
+
+
 void BoardModel::setMarked(Color color)
 {
     switch(color)
@@ -415,5 +441,10 @@ void BoardModel::changeNum(Color color, int num)
         default:
             break;
     }
+}
+
+BoardModel* BoardModel::getCopied()
+{
+    return new BoardModel(this->boards);
 }
 

@@ -27,6 +27,7 @@ public:
         Marked =  4, //置ける位置にマークされた状態
     };
     BoardModel();
+    BoardModel(State *boards);
     ~BoardModel();
     
     State getState(int x, int y);
@@ -39,8 +40,10 @@ public:
     bool isMarked(int x, int y);
     bool hasPuttablePlace();
     void showNum();
-    
     int getNum(Color color);
+    
+    //そのいちにcolorの石を置くと次の手番で何個置けるか
+    int getNextPuttableNum(int x, int y, Color color);
 private:
 
     enum Direction{
@@ -66,6 +69,8 @@ private:
     void increaseNum(Color color);
     void decreaseNum(Color color);
     void changeNum(Color color, int num);
+    
+    BoardModel* getCopied();
     
     int whiteNum = 0;
     int blackNum = 0;

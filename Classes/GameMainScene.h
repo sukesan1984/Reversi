@@ -8,6 +8,7 @@
 #include "IPlayer.h"
 #include "Player.h"
 #include "SelectRandomPlayer.h"
+#include "SelectMakeOponentFewPlacesPlayer.h"
 #include "Const.h"
 #include "TouchDelegate.h"
 #include "ScoreBoardController.h"

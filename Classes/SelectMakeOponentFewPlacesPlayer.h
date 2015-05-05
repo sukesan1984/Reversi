@@ -10,9 +10,13 @@
 #define __Reversi__SelectMakeOponentFewPlacesPlayer__
 
 #include <stdio.h>
-#include "IPlayer.h"
-class SelectMakeOponentFewPlacesPlayer : public IPlayer
+#include "NPCBase.h"
+class SelectMakeOponentFewPlacesPlayer : public NPCBase
 {
+public:
+    SelectMakeOponentFewPlacesPlayer(Color playerColor, BoardModel* boardModel);
+    void setTurn(bool isMyTurn);
 };
 
 #endif /* defined(__Reversi__SelectMakeOponentFewPlacesPlayer__) */
+

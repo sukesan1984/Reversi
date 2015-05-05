@@ -36,7 +36,6 @@ void NPCBase::setOnSelectHandler(DelegateBase *delegate)
 
 void NPCBase::put(int x, int y)
 {
-    
     std::vector<DelegateBase*>::iterator it;
     
     for(it = this->listeners.begin(); it != this->listeners.end(); ++it)
