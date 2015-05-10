@@ -18,6 +18,7 @@
 		251B16941AF6F3E60007109D /* ScoreBoardController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B16921AF6F3E60007109D /* ScoreBoardController.cpp */; };
 		251B16971AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B16951AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.cpp */; };
 		251B169A1AF6FE830007109D /* NPCBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B16981AF6FE830007109D /* NPCBase.cpp */; };
+		2531949D1AFDD67F00A4388C /* WebSocketTestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2531949B1AFDD67F00A4388C /* WebSocketTestScene.cpp */; };
 		254CBF871AE3A10D003A33C2 /* PhaseController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 254CBF851AE3A10C003A33C2 /* PhaseController.cpp */; };
 		254CBF8A1AE3B18C003A33C2 /* MarkController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 254CBF881AE3B18C003A33C2 /* MarkController.cpp */; };
 		2561686F1AE2507800C983C5 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 2561686E1AE2507800C983C5 /* sample.png */; };
@@ -145,6 +146,8 @@
 		251B16961AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectMakeOponentFewPlacesPlayer.h; sourceTree = "<group>"; };
 		251B16981AF6FE830007109D /* NPCBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NPCBase.cpp; sourceTree = "<group>"; };
 		251B16991AF6FE830007109D /* NPCBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPCBase.h; sourceTree = "<group>"; };
+		2531949B1AFDD67F00A4388C /* WebSocketTestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WebSocketTestScene.cpp; sourceTree = "<group>"; };
+		2531949C1AFDD67F00A4388C /* WebSocketTestScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketTestScene.h; sourceTree = "<group>"; };
 		254CBF851AE3A10C003A33C2 /* PhaseController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhaseController.cpp; sourceTree = "<group>"; };
 		254CBF861AE3A10C003A33C2 /* PhaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhaseController.h; sourceTree = "<group>"; };
 		254CBF881AE3B18C003A33C2 /* MarkController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MarkController.cpp; sourceTree = "<group>"; };
@@ -319,6 +322,8 @@
 				251B16861AF605440007109D /* TitleScene.h */,
 				46880B8619C43A87006E1F66 /* GameMainScene.cpp */,
 				46880B8719C43A87006E1F66 /* GameMainScene.h */,
+				2531949B1AFDD67F00A4388C /* WebSocketTestScene.cpp */,
+				2531949C1AFDD67F00A4388C /* WebSocketTestScene.h */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -629,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25CD2EF71AE37D4400869579 /* TurnController.cpp in Sources */,
+				2531949D1AFDD67F00A4388C /* WebSocketTestScene.cpp in Sources */,
 				254CBF871AE3A10D003A33C2 /* PhaseController.cpp in Sources */,
 				25CD2EEB1AE2A72100869579 /* PieceController.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,

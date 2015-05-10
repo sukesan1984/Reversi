@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "GameMainScene.h"
+#include "WebSocketTestScene.h"
 #include "TitleScene.h"
 
 USING_NS_CC;
@@ -57,7 +58,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
     //auto scene = GameMain::createScene();
-    auto scene = TitleScene::createScene();
+    //auto scene = TitleScene::createScene();
+    auto scene = WebSocketTestScene::createScene();
+    
 
     // run
     director->runWithScene(scene);
