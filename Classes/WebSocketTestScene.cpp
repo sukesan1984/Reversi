@@ -9,6 +9,7 @@
 #include "WebSocketTestScene.h"
 #include "json/rapidjson.h"
 #include "json/document.h"
+#include "sample.h"
 
 USING_NS_CC;
 // UI関係
@@ -55,8 +56,12 @@ bool WebSocketTestScene::init()
     this->addChild(editBox);
     
     //ここでsocket.io connection開始。clientを持っておく。
-    _client = SocketIO::connect("http://localhost:3000", *this);
-    _client->on("hello", CC_CALLBACK_2(WebSocketTestScene::onReceiveEvent, this));
+    //_client = SocketIO::connect("http://localhost:3000", *this);
+    //_client->on("hello", CC_CALLBACK_2(WebSocketTestScene::onReceiveEvent, this));
+    
+    Sample *sample = new Sample();
+    //sample->func("http://google.com");
+    sample->connect();
     
     return true;
 }

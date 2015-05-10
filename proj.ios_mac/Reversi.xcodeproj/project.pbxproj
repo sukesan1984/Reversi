@@ -10,7 +10,6 @@
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		250730C01AF078C100D64BCE /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 250730BE1AF078C100D64BCE /* Player.cpp */; };
 		251B16871AF605440007109D /* TitleScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B16851AF605440007109D /* TitleScene.cpp */; };
 		251B168C1AF6323A0007109D /* SelectRandomPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B168A1AF6323A0007109D /* SelectRandomPlayer.cpp */; };
@@ -19,6 +18,20 @@
 		251B16971AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B16951AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.cpp */; };
 		251B169A1AF6FE830007109D /* NPCBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B16981AF6FE830007109D /* NPCBase.cpp */; };
 		2531949D1AFDD67F00A4388C /* WebSocketTestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2531949B1AFDD67F00A4388C /* WebSocketTestScene.cpp */; };
+		253194A41AFF36EF00A4388C /* sampleIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 253194A31AFF36EF00A4388C /* sampleIOS.mm */; };
+		253194AE1AFF42BF00A4388C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194AD1AFF42BF00A4388C /* OpenGLES.framework */; };
+		253194B01AFF42C900A4388C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194AF1AFF42C900A4388C /* UIKit.framework */; };
+		253194B41AFF42E700A4388C /* libPods-Reversi iOS-AZSocketIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194B31AFF42E700A4388C /* libPods-Reversi iOS-AZSocketIO.a */; };
+		253194B61AFF42F800A4388C /* libPods-Reversi iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194B51AFF42F800A4388C /* libPods-Reversi iOS.a */; };
+		253194B91AFF430D00A4388C /* libPods-Reversi iOS-AFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194B71AFF430D00A4388C /* libPods-Reversi iOS-AFNetworking.a */; };
+		253194BA1AFF430D00A4388C /* libPods-Reversi iOS-SocketRocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194B81AFF430D00A4388C /* libPods-Reversi iOS-SocketRocket.a */; };
+		253194BC1AFF437A00A4388C /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194BB1AFF437A00A4388C /* libicucore.dylib */; };
+		253194BE1AFF438100A4388C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194BD1AFF438100A4388C /* CFNetwork.framework */; };
+		253194C01AFF438700A4388C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194BF1AFF438700A4388C /* Security.framework */; };
+		253194C21AFF439000A4388C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194C11AFF439000A4388C /* Foundation.framework */; };
+		253194C41AFF43C600A4388C /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194C31AFF43C600A4388C /* MobileCoreServices.framework */; };
+		253194C61AFF4A0000A4388C /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194C51AFF4A0000A4388C /* MediaPlayer.framework */; };
+		253194C81AFF4A0A00A4388C /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194C71AFF4A0A00A4388C /* GameController.framework */; };
 		254CBF871AE3A10D003A33C2 /* PhaseController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 254CBF851AE3A10C003A33C2 /* PhaseController.cpp */; };
 		254CBF8A1AE3B18C003A33C2 /* MarkController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 254CBF881AE3B18C003A33C2 /* MarkController.cpp */; };
 		2561686F1AE2507800C983C5 /* sample.png in Resources */ = {isa = PBXBuildFile; fileRef = 2561686E1AE2507800C983C5 /* sample.png */; };
@@ -82,7 +95,6 @@
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
-		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
 		D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620B132DFF330009C878 /* OpenAL.framework */; };
@@ -123,6 +135,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		193AC3FC801AEC37E1138B84 /* Pods-Reversi iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reversi iOS.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Reversi iOS/Pods-Reversi iOS.release.xcconfig"; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -148,6 +161,22 @@
 		251B16991AF6FE830007109D /* NPCBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPCBase.h; sourceTree = "<group>"; };
 		2531949B1AFDD67F00A4388C /* WebSocketTestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WebSocketTestScene.cpp; sourceTree = "<group>"; };
 		2531949C1AFDD67F00A4388C /* WebSocketTestScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketTestScene.h; sourceTree = "<group>"; };
+		253194A21AFF36CC00A4388C /* sample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sample.h; sourceTree = "<group>"; };
+		253194A31AFF36EF00A4388C /* sampleIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sampleIOS.mm; sourceTree = "<group>"; };
+		253194AD1AFF42BF00A4388C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		253194AF1AFF42C900A4388C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		253194B11AFF42D100A4388C /* libPods-Reversi iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Reversi iOS.a"; path = "/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/../build/Debug-iphoneos/libPods-Reversi iOS.a"; sourceTree = "<absolute>"; };
+		253194B31AFF42E700A4388C /* libPods-Reversi iOS-AZSocketIO.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Reversi iOS-AZSocketIO.a"; path = "/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/../build/Debug-iphoneos/libPods-Reversi iOS-AZSocketIO.a"; sourceTree = "<absolute>"; };
+		253194B51AFF42F800A4388C /* libPods-Reversi iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Reversi iOS.a"; path = "/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/../build/Debug-iphoneos/libPods-Reversi iOS.a"; sourceTree = "<absolute>"; };
+		253194B71AFF430D00A4388C /* libPods-Reversi iOS-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Reversi iOS-AFNetworking.a"; path = "/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/../build/Debug-iphoneos/libPods-Reversi iOS-AFNetworking.a"; sourceTree = "<absolute>"; };
+		253194B81AFF430D00A4388C /* libPods-Reversi iOS-SocketRocket.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Reversi iOS-SocketRocket.a"; path = "/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/../build/Debug-iphoneos/libPods-Reversi iOS-SocketRocket.a"; sourceTree = "<absolute>"; };
+		253194BB1AFF437A00A4388C /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/usr/lib/libicucore.dylib; sourceTree = DEVELOPER_DIR; };
+		253194BD1AFF438100A4388C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		253194BF1AFF438700A4388C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		253194C11AFF439000A4388C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		253194C31AFF43C600A4388C /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		253194C51AFF4A0000A4388C /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		253194C71AFF4A0A00A4388C /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
 		254CBF851AE3A10C003A33C2 /* PhaseController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PhaseController.cpp; sourceTree = "<group>"; };
 		254CBF861AE3A10C003A33C2 /* PhaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhaseController.h; sourceTree = "<group>"; };
 		254CBF881AE3B18C003A33C2 /* MarkController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MarkController.cpp; sourceTree = "<group>"; };
@@ -223,9 +252,11 @@
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B776A3440F8A14CCFE4471EB /* Pods-Reversi iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reversi iOS.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Reversi iOS/Pods-Reversi iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C89B2C8D5F05CBBA49CD3358 /* libPods-Reversi iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reversi iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44C620B132DFF330009C878 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -237,6 +268,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				253194C81AFF4A0A00A4388C /* GameController.framework in Frameworks */,
+				253194C61AFF4A0000A4388C /* MediaPlayer.framework in Frameworks */,
+				253194C41AFF43C600A4388C /* MobileCoreServices.framework in Frameworks */,
+				253194C21AFF439000A4388C /* Foundation.framework in Frameworks */,
+				253194C01AFF438700A4388C /* Security.framework in Frameworks */,
+				253194BE1AFF438100A4388C /* CFNetwork.framework in Frameworks */,
+				253194BC1AFF437A00A4388C /* libicucore.dylib in Frameworks */,
+				253194B91AFF430D00A4388C /* libPods-Reversi iOS-AFNetworking.a in Frameworks */,
+				253194BA1AFF430D00A4388C /* libPods-Reversi iOS-SocketRocket.a in Frameworks */,
+				253194B61AFF42F800A4388C /* libPods-Reversi iOS.a in Frameworks */,
+				253194B41AFF42E700A4388C /* libPods-Reversi iOS-AZSocketIO.a in Frameworks */,
+				253194B01AFF42C900A4388C /* UIKit.framework in Frameworks */,
+				253194AE1AFF42BF00A4388C /* OpenGLES.framework in Frameworks */,
 				25664D0A1AD916F4000B9711 /* CoreMedia.framework in Frameworks */,
 				25664D081AD91598000B9711 /* SystemConfiguration.framework in Frameworks */,
 				25664D061AD91587000B9711 /* StoreKit.framework in Frameworks */,
@@ -250,9 +294,7 @@
 				1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */,
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
-				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */,
 				BF1712471292920000B8313A /* libz.dylib in Frameworks */,
 				BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */,
 				D44C620C132DFF330009C878 /* OpenAL.framework in Frameworks */,
@@ -295,6 +337,15 @@
 			);
 			name = ios;
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		0963B11A4E80EA77ECFF4564 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B776A3440F8A14CCFE4471EB /* Pods-Reversi iOS.debug.xcconfig */,
+				193AC3FC801AEC37E1138B84 /* Pods-Reversi iOS.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -344,9 +395,44 @@
 			name = Player;
 			sourceTree = "<group>";
 		};
+		2531949E1AFF36AB00A4388C /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				2531949F1AFF36AB00A4388C /* sample_plugin */,
+			);
+			name = libs;
+			path = ../libs;
+			sourceTree = "<group>";
+		};
+		2531949F1AFF36AB00A4388C /* sample_plugin */ = {
+			isa = PBXGroup;
+			children = (
+				253194A01AFF36AB00A4388C /* android */,
+				253194A11AFF36AB00A4388C /* ios */,
+				253194A21AFF36CC00A4388C /* sample.h */,
+			);
+			path = sample_plugin;
+			sourceTree = "<group>";
+		};
+		253194A01AFF36AB00A4388C /* android */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = android;
+			sourceTree = "<group>";
+		};
+		253194A11AFF36AB00A4388C /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				253194A31AFF36EF00A4388C /* sampleIOS.mm */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				2531949E1AFF36AB00A4388C /* libs */,
 				46880B8319C43A87006E1F66 /* Classes */,
 				46880B7519C43A67006E1F66 /* Resources */,
 				1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */,
@@ -354,6 +440,7 @@
 				080E96DDFE201D6D7F000001 /* ios */,
 				503AE10617EB990700D1A890 /* mac */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				0963B11A4E80EA77ECFF4564 /* Pods */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -361,6 +448,20 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				253194C71AFF4A0A00A4388C /* GameController.framework */,
+				253194C51AFF4A0000A4388C /* MediaPlayer.framework */,
+				253194C31AFF43C600A4388C /* MobileCoreServices.framework */,
+				253194C11AFF439000A4388C /* Foundation.framework */,
+				253194BF1AFF438700A4388C /* Security.framework */,
+				253194BD1AFF438100A4388C /* CFNetwork.framework */,
+				253194BB1AFF437A00A4388C /* libicucore.dylib */,
+				253194B71AFF430D00A4388C /* libPods-Reversi iOS-AFNetworking.a */,
+				253194B81AFF430D00A4388C /* libPods-Reversi iOS-SocketRocket.a */,
+				253194B51AFF42F800A4388C /* libPods-Reversi iOS.a */,
+				253194B31AFF42E700A4388C /* libPods-Reversi iOS-AZSocketIO.a */,
+				253194B11AFF42D100A4388C /* libPods-Reversi iOS.a */,
+				253194AF1AFF42C900A4388C /* UIKit.framework */,
+				253194AD1AFF42BF00A4388C /* OpenGLES.framework */,
 				25664D091AD916F4000B9711 /* CoreMedia.framework */,
 				25664D071AD91598000B9711 /* SystemConfiguration.framework */,
 				25664D051AD91587000B9711 /* StoreKit.framework */,
@@ -391,6 +492,7 @@
 				BF170DB012928DE900B8313A /* OpenGLES.framework */,
 				BF1C47EA1293683800B63C5D /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				C89B2C8D5F05CBBA49CD3358 /* libPods-Reversi iOS.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -497,9 +599,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Reversi iOS" */;
 			buildPhases = (
+				3B024F758C13D330F47A5C78 /* Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				0665EA191E0CF70B4D6CA044 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -628,6 +732,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0665EA191E0CF70B4D6CA044 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Reversi iOS/Pods-Reversi iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B024F758C13D330F47A5C78 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -636,6 +773,7 @@
 				25CD2EF71AE37D4400869579 /* TurnController.cpp in Sources */,
 				2531949D1AFDD67F00A4388C /* WebSocketTestScene.cpp in Sources */,
 				254CBF871AE3A10D003A33C2 /* PhaseController.cpp in Sources */,
+				253194A41AFF36EF00A4388C /* sampleIOS.mm in Sources */,
 				25CD2EEB1AE2A72100869579 /* PieceController.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameMainScene.cpp in Sources */,
@@ -685,6 +823,7 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B776A3440F8A14CCFE4471EB /* Pods-Reversi iOS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -715,6 +854,7 @@
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
+					"-ObjC",
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -725,6 +865,7 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 193AC3FC801AEC37E1138B84 /* Pods-Reversi iOS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -753,6 +894,7 @@
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
+					"-ObjC",
 				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
