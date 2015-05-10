@@ -9,7 +9,7 @@
 #include "WebSocketTestScene.h"
 #include "json/rapidjson.h"
 #include "json/document.h"
-#include "sample.h"
+#include "SocketIOWrapper.h"
 
 USING_NS_CC;
 // UI関係
@@ -59,9 +59,10 @@ bool WebSocketTestScene::init()
     //_client = SocketIO::connect("http://localhost:3000", *this);
     //_client->on("hello", CC_CALLBACK_2(WebSocketTestScene::onReceiveEvent, this));
     
-    Sample *sample = new Sample();
+    //SocketIOWrapper *sample = new SocketIOWrapper();
+    _client = SocketIOWrapper::create();
     //sample->func("http://google.com");
-    sample->connect();
+    _client->connect();
     
     return true;
 }
@@ -100,13 +101,19 @@ void WebSocketTestScene::textFieldEvent(Ref *pSender, TextField::EventType type)
 {
     TextField* text;
     std::string sendText;
+    std::string eventName;
+    std::string emitKey;
+    std::string message;
     switch(type)
     {
         case TextField::EventType::DETACH_WITH_IME:
             text = (TextField*) pSender;
             
-            sendText = "[{\"value\":\"" + text->getStringValue() + "\"}]";
-            _client->emit("hello", sendText);
+            //_client->emit("hello", sendText);
+            eventName = "hello";
+            emitKey = "value";
+            message = text->getString();
+            _client->emit(eventName, emitKey, message);
             addTalkPlayer(text->getStringValue());
             break;
         default:

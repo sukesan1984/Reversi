@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include "cocos2d.h"
 #include <SocketIO.H>
+#include "SocketIOWrapper.h"
 #include "ui/cocosGUI.h"
 
 using namespace cocos2d::network;
@@ -21,7 +22,7 @@ class WebSocketTestScene : public cocos2d::Layer, public SocketIO::SIODelegate
 {
 private:
     int index;
-    SIOClient* _client;
+    SocketIOWrapper* _client;
     TextField* editBox;
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer

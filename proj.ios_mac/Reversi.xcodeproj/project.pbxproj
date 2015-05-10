@@ -18,7 +18,7 @@
 		251B16971AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B16951AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.cpp */; };
 		251B169A1AF6FE830007109D /* NPCBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 251B16981AF6FE830007109D /* NPCBase.cpp */; };
 		2531949D1AFDD67F00A4388C /* WebSocketTestScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2531949B1AFDD67F00A4388C /* WebSocketTestScene.cpp */; };
-		253194A41AFF36EF00A4388C /* sampleIOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 253194A31AFF36EF00A4388C /* sampleIOS.mm */; };
+		253194A41AFF36EF00A4388C /* SocketIOWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 253194A31AFF36EF00A4388C /* SocketIOWrapper.mm */; };
 		253194AE1AFF42BF00A4388C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194AD1AFF42BF00A4388C /* OpenGLES.framework */; };
 		253194B01AFF42C900A4388C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194AF1AFF42C900A4388C /* UIKit.framework */; };
 		253194B41AFF42E700A4388C /* libPods-Reversi iOS-AZSocketIO.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 253194B31AFF42E700A4388C /* libPods-Reversi iOS-AZSocketIO.a */; };
@@ -161,8 +161,8 @@
 		251B16991AF6FE830007109D /* NPCBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NPCBase.h; sourceTree = "<group>"; };
 		2531949B1AFDD67F00A4388C /* WebSocketTestScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WebSocketTestScene.cpp; sourceTree = "<group>"; };
 		2531949C1AFDD67F00A4388C /* WebSocketTestScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketTestScene.h; sourceTree = "<group>"; };
-		253194A21AFF36CC00A4388C /* sample.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sample.h; sourceTree = "<group>"; };
-		253194A31AFF36EF00A4388C /* sampleIOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = sampleIOS.mm; sourceTree = "<group>"; };
+		253194A21AFF36CC00A4388C /* SocketIOWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketIOWrapper.h; sourceTree = "<group>"; };
+		253194A31AFF36EF00A4388C /* SocketIOWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SocketIOWrapper.mm; sourceTree = "<group>"; };
 		253194AD1AFF42BF00A4388C /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		253194AF1AFF42C900A4388C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		253194B11AFF42D100A4388C /* libPods-Reversi iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Reversi iOS.a"; path = "/Users/takami.kosuke/work/develop/cocos2d-x/Reversi/Pods/../build/Debug-iphoneos/libPods-Reversi iOS.a"; sourceTree = "<absolute>"; };
@@ -409,7 +409,7 @@
 			children = (
 				253194A01AFF36AB00A4388C /* android */,
 				253194A11AFF36AB00A4388C /* ios */,
-				253194A21AFF36CC00A4388C /* sample.h */,
+				253194A21AFF36CC00A4388C /* SocketIOWrapper.h */,
 			);
 			path = sample_plugin;
 			sourceTree = "<group>";
@@ -424,7 +424,7 @@
 		253194A11AFF36AB00A4388C /* ios */ = {
 			isa = PBXGroup;
 			children = (
-				253194A31AFF36EF00A4388C /* sampleIOS.mm */,
+				253194A31AFF36EF00A4388C /* SocketIOWrapper.mm */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -773,7 +773,7 @@
 				25CD2EF71AE37D4400869579 /* TurnController.cpp in Sources */,
 				2531949D1AFDD67F00A4388C /* WebSocketTestScene.cpp in Sources */,
 				254CBF871AE3A10D003A33C2 /* PhaseController.cpp in Sources */,
-				253194A41AFF36EF00A4388C /* sampleIOS.mm in Sources */,
+				253194A41AFF36EF00A4388C /* SocketIOWrapper.mm in Sources */,
 				25CD2EEB1AE2A72100869579 /* PieceController.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* GameMainScene.cpp in Sources */,
