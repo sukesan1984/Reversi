@@ -53,7 +53,7 @@ bool TitleScene::init()
     // add the backgroundSprite as a child to this layer
     this->addChild(backgroundSprite, 0);
     
-    MenuItemFont* toPvpFont = MenuItemFont::create("対人戦", CC_CALLBACK_1(TitleScene::toPvp, this));
+    MenuItemFont* toPvpFont = MenuItemFont::create("友達と", CC_CALLBACK_1(TitleScene::toPvp, this));
     Size s = Director::getInstance()->getVisibleSize();
     
     Menu* pMenu = Menu::create(toPvpFont, NULL);

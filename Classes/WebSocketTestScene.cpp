@@ -110,7 +110,7 @@ void WebSocketTestScene::textFieldEvent(Ref *pSender, TextField::EventType type)
             text = (TextField*) pSender;
             
             //_client->emit("hello", sendText);
-            eventName = "hello";
+            eventName = "chat message";
             emitKey = "value";
             message = text->getString();
             _client->emit(eventName, emitKey, message);

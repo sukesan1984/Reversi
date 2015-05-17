@@ -58,8 +58,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
     //auto scene = GameMain::createScene();
-    //auto scene = TitleScene::createScene();
-    auto scene = WebSocketTestScene::createScene();
+    auto scene = TitleScene::createScene();
+    //auto scene = WebSocketTestScene::createScene();
     
 
     // run
