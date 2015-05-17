@@ -272,6 +272,42 @@ int BoardModel::getNextPuttableNum(int x, int y, Color color)
     return count;
 }
 
+int BoardModel::getEvaluation(int x, int y, Color color, int *weighting)
+{
+    BoardModel * copied = this->getCopied();
+    
+    copied->setState(x, y, color);
+    copied->reverse(x, y, color);
+    
+    int evaluation = 0;
+    for(int i = 0; i < 8 * 8; i++)
+    {
+        int x = i % 8;
+        int y = i / 8;
+        State state = copied->getState(x, y);
+        
+        //黒を基準に考える
+        switch(state)
+        {
+            case State::Black:
+                evaluation += weighting[i]; //黒があれば、黒の点数をプラスする。
+                break;
+            case State::White:
+                evaluation -= weighting[i]; //白があれば、その位置の点数をマイナスする。
+                break;
+            default:
+                break;
+        }
+    }
+    
+    if(color == Color::Black)
+    {
+        return evaluation;
+    }
+    
+    return -evaluation;
+}
+
 
 void BoardModel::setMarked(Color color)
 {

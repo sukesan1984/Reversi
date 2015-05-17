@@ -7,6 +7,7 @@
 //
 
 #include "SelectMakeOponentFewPlacesPlayer.h"
+#include <math.h>
 
 SelectMakeOponentFewPlacesPlayer::SelectMakeOponentFewPlacesPlayer(Color playerColor, BoardModel* boardModel) : NPCBase(playerColor, boardModel)
 {
@@ -28,13 +29,19 @@ void SelectMakeOponentFewPlacesPlayer::setTurn(bool isMyTurn)
     {
         int nextCount = this->boardModel->getNextPuttableNum(it->x, it->y, this->playerColor);
         cocos2d::log("next:%d", nextCount);
-        if(nextCount < count);
+        if(nextCount < count)
         {
             candidate.x = it->x;
             cocos2d::log("x:%d", it->x);
             candidate.y = it->y;
             cocos2d::log("y:%d", it->y);
             count = nextCount;
+        } else if(nextCount == count) {
+            if(rand() % 2 == 0)
+            {
+                candidate.x = it->x;
+                candidate.y = it->y;
+            }
         }
     }
     

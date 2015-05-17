@@ -9,6 +9,7 @@
 #include "Player.h"
 #include "SelectRandomPlayer.h"
 #include "SelectMakeOponentFewPlacesPlayer.h"
+#include "SelectWithWeighting.h"
 #include "Const.h"
 #include "TouchDelegate.h"
 #include "ScoreBoardController.h"

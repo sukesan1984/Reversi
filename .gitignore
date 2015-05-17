@@ -36,3 +36,6 @@ out/
 
 #JAVA
 *.class
+
+#node
+server/node_modules/*

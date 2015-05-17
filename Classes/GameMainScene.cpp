@@ -78,11 +78,15 @@ bool GameMain::init()
     
     Player* playerBlack =  new Player(Color::Black);
     this->boardController->setOnClickHandler(TouchDelegate<Player>::createDelegator(playerBlack, &Player::onCellClick));
+    
+    //SelectWithWeighting* playerBlack = new SelectWithWeighting(Color::Black, this->boardModel);
+    
     //Player* playerWhite =  new Player(Color::White);
     //this->boardController->setOnClickHandler(TouchDelegate<Player>::createDelegator(playerWhite, &Player::onCellClick));
     
     //SelectRandomPlayer* playerWhite =  new SelectRandomPlayer(Color::White, this->boardModel);
-    SelectMakeOponentFewPlacesPlayer* playerWhite =  new SelectMakeOponentFewPlacesPlayer(Color::White, this->boardModel);
+    //SelectMakeOponentFewPlacesPlayer* playerWhite =  new SelectMakeOponentFewPlacesPlayer(Color::White, this->boardModel);
+    SelectWithWeighting* playerWhite =  new SelectWithWeighting(Color::White, this->boardModel);
     //this->boardController->setOnClickHandler(TouchDelegate<Player>::createDelegator(playerWhite, &Player::onCellClick));
     
     //create score background

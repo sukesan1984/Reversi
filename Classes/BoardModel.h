@@ -44,6 +44,10 @@ public:
     
     //そのいちにcolorの石を置くと次の手番で何個置けるか
     int getNextPuttableNum(int x, int y, Color color);
+    
+    //重み付けを渡してそこに石を置いたときに評価値の値の差を返す。
+    int getEvaluation(int x, int y, Color color, int *weighting);
+    
 private:
 
     enum Direction{

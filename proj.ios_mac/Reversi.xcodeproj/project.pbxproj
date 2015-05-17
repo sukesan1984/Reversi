@@ -44,6 +44,7 @@
 		25664D061AD91587000B9711 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664D051AD91587000B9711 /* StoreKit.framework */; };
 		25664D081AD91598000B9711 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664D071AD91598000B9711 /* SystemConfiguration.framework */; };
 		25664D0A1AD916F4000B9711 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25664D091AD916F4000B9711 /* CoreMedia.framework */; };
+		257F59111B087BDE00CBFF2E /* SelectWithWeighting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 257F590F1B087BDE00CBFF2E /* SelectWithWeighting.cpp */; };
 		25CD2EE41AE270F800869579 /* textures.plist in Resources */ = {isa = PBXBuildFile; fileRef = 25CD2EE21AE270F800869579 /* textures.plist */; };
 		25CD2EE51AE270F800869579 /* textures.png in Resources */ = {isa = PBXBuildFile; fileRef = 25CD2EE31AE270F800869579 /* textures.png */; };
 		25CD2EE81AE2971C00869579 /* BoardController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 25CD2EE61AE2971C00869579 /* BoardController.cpp */; };
@@ -195,6 +196,8 @@
 		25664D051AD91587000B9711 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
 		25664D071AD91598000B9711 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		25664D091AD916F4000B9711 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/CoreMedia.framework; sourceTree = DEVELOPER_DIR; };
+		257F590F1B087BDE00CBFF2E /* SelectWithWeighting.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SelectWithWeighting.cpp; sourceTree = "<group>"; };
+		257F59101B087BDE00CBFF2E /* SelectWithWeighting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectWithWeighting.h; sourceTree = "<group>"; };
 		25CD2EE21AE270F800869579 /* textures.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = textures.plist; sourceTree = "<group>"; };
 		25CD2EE31AE270F800869579 /* textures.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textures.png; sourceTree = "<group>"; };
 		25CD2EE61AE2971C00869579 /* BoardController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BoardController.cpp; sourceTree = "<group>"; };
@@ -391,6 +394,8 @@
 				251B16961AF6FE2F0007109D /* SelectMakeOponentFewPlacesPlayer.h */,
 				251B16981AF6FE830007109D /* NPCBase.cpp */,
 				251B16991AF6FE830007109D /* NPCBase.h */,
+				257F59101B087BDE00CBFF2E /* SelectWithWeighting.h */,
+				257F590F1B087BDE00CBFF2E /* SelectWithWeighting.cpp */,
 			);
 			name = Player;
 			sourceTree = "<group>";
@@ -781,6 +786,7 @@
 				251B168C1AF6323A0007109D /* SelectRandomPlayer.cpp in Sources */,
 				251B16911AF6F3830007109D /* ScoreBoardBuilder.cpp in Sources */,
 				251B169A1AF6FE830007109D /* NPCBase.cpp in Sources */,
+				257F59111B087BDE00CBFF2E /* SelectWithWeighting.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				25CD2EE81AE2971C00869579 /* BoardController.cpp in Sources */,
